@@ -1,0 +1,140 @@
+/** Typhography **/
+body {
+    color: #575a5b;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #575a5b;
+}
+
+#text-white {
+    color: #ffffff;
+}
+
+#logo-code-realm {
+    margin: 30px;
+}
+
+/** Override Semantic UI */
+.ui.button {
+    border-radius: 2.285714rem;
+}
+
+.ui.basic.button, .ui.basic.buttons .button {
+    border-radius: 2.285714rem;
+}
+
+/** Header **/
+.hidden.menu {
+    display: none;
+}
+
+.text.menu .toc.item {
+    display: none;
+}
+
+/** Hero **/
+.hero-main {
+    background-image: url(../image/bg-hero-main.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-skills {
+    background-image: url(../image/bg-hero-blue.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-quest {
+    background-image: url(../image/bg-hero-green.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero-main-content {
+    padding: 120px;
+}
+
+#hero-content {
+    padding: 70px;
+}
+
+/** Content **/
+.main-title {
+    margin-bottom: 70px;
+}
+
+.learn-realm {
+    padding: 50px;
+    background: #f6f8f8;
+}
+
+#how-coderealm-works {
+    padding: 50px;
+}
+
+#works {
+    padding: 50px 100px 50px 100px;
+}
+
+#badges-rank {
+    background-image: url(../image/bg-hero-purple.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#badges-rank-content {
+    padding: 70px;
+}
+
+/** Footer **/
+#footer-content {
+    padding: 30px;
+}
+
+#copyright {
+    padding-top: 30px;
+}
+
+/** Sign In Sign Up **/
+.sign-up-in {
+    padding: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+    /** Header **/
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .ui.text.menu .right.item,
+    .ui.text.menu .item .dropdown.item {
+        display: none;
+    }
+    
+    .text.menu .toc.item {
+        display: block;
+        margin-left: 20px;
+    }
+
+    /** Hero **/
+    #hero-main-content {
+        padding: 50px;
+    }
+
+    /** Sign In Sign Up **/
+    .sign-up-in {
+        padding: 20px;
+    }
+}
