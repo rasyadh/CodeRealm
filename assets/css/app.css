@@ -17,8 +17,14 @@ h1, h2, h3, h4, h5, h6, p {
     color: #ffffff;
 }
 
+/** Global **/
 #logo-code-realm {
     margin: 30px;
+}
+
+#chat-circular {
+    position: relative;
+    z-index: 99;
 }
 
 /** Override Semantic UI */
