@@ -63,6 +63,7 @@ class Main extends CI_Controller {
 		$data['title'] = "Role Playing Code";
 		$data_skill = $this->getSkill();
 		$data['skill_path'] = json_decode($data_skill);
+		$data['signin'] = false;
 
 		$this->template->load('base', 'main/index', $data);
 	}

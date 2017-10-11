@@ -28,7 +28,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
     <?php 
-    include 'partials/following.php'; 
     include 'partials/sidebar.php'
     ?>
     <div class="pusher">

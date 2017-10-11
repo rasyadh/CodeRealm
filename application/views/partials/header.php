@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="item">
-            <div class="ui floating dropdown item">
+            <div class="ui floating dropdown item" id="learn-realm-dropdown">
                 <strong>Learn Realm</strong>
                 <i class="dropdown icon"></i>
                 <div class="menu">
@@ -28,10 +28,34 @@
                     <div class="result"></div>
                 </div>
             </div>
+            <?php if ($signin == true){ ?>
+            <a class="item" href="">
+                <i class="large alarm icon"></i>
+            </a>
+            <a class="item" href="">
+                <i class="large comments icon"></i>
+            </a>
+            <div class="item">
+                <div class="ui floating dropdown">
+                    <img class="ui avatar image" src="<?= base_url("assets/image/logo.svg"); ?>">
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="<?= site_url(); ?>"><i class="blue dashboard icon"></i>My Dashboard</a>
+                        <a class="item" href="<?= site_url(); ?>"><i class="blue book icon"></i>My Report Card</a>
+                        <a class="item" href="<?= site_url(); ?>"><i class="blue user icon"></i>My Profile</a>
+                        <a class="item" href="<?= site_url(); ?>"><i class="blue sign out icon"></i>Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            else {
+            ?>
             <div class="item">
                 <?= anchor('users/signup', 'Create Free Account', 'class="ui primary basic button"'); ?>
             </div>
             <?= anchor('users/signin', 'Sign In', 'class="item"'); ?>
+            <?php } ?>
         </div>
     </div>
 </div>
