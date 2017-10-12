@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="item">
-            <div class="ui floating dropdown item" id="learn-realm-dropdown">
+            <div class="ui floating dropdown item" id="header-learn-dropdown">
                 <strong>Learn Realm</strong>
                 <i class="dropdown icon"></i>
                 <div class="menu">
@@ -29,14 +29,25 @@
                 </div>
             </div>
             <?php if ($signin == true){ ?>
-            <a class="item" href="">
-                <i class="large alarm icon"></i>
-            </a>
+            <div class="item">
+                <div class="ui floating dropdown icon" id="header-notification-dropdown">
+                    <i class="large alarm icon"></i>
+                    <div class="menu">
+                        <div class="item">
+                            There is no new notification.
+                        </div>
+                        <div class="divider"></div>
+                        <div class="item">
+                            <a href="">Show all new notification</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a class="item" href="">
                 <i class="large comments icon"></i>
             </a>
             <div class="item">
-                <div class="ui floating dropdown">
+                <div class="ui floating dropdown" id="header-account-dropdown">
                     <img class="ui avatar image" src="<?= base_url("assets/image/logo.svg"); ?>">
                     <i class="dropdown icon"></i>
                     <div class="menu">

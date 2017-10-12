@@ -17,9 +17,9 @@
                         <div class="item">
                             <div class="header">About Us</div>
                         </div>
-                        <div class="item"><a href="#">Company</a></div>
-                        <div class="item"><a href="#">Term of Use</a></div>
-                        <div class="item"><a href="#">Privacy Police</a></div>
+                        <div class="item"><a href="<?= site_url('main/about'); ?>">Company</a></div>
+                        <div class="item"><a href="<?= site_url('main/about'); ?>">Terms of Use</a></div>
+                        <div class="item"><a href="<?= site_url('main/about'); ?>">Privacy Police</a></div>
                     </div>
                 </div>
                 <div class="three wide column">

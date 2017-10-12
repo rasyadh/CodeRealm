@@ -1,14 +1,21 @@
 $(document).ready(function () {
     $('.ui.sidebar').sidebar('attach events', '.toc.item');
 
-    $('#learn-realm-dropdown').dropdown({
-        transition: 'drop',
+    $('#header-learn-dropdown').dropdown({
+        transition: 'fade up',
         on: 'hover'
     });
+
+    $('#header-account-dropdown').dropdown();
+    $('#header-notification-dropdown').dropdown();
+
+    $('.ui.dropdown').dropdown();
 
     $('.ui.search').search({
         source: content
     });
+
+    $('.menu.about .item').tab();
 
     $('.ui.checkbox').checkbox();
 });

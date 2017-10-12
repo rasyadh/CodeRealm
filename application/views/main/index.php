@@ -44,23 +44,30 @@
     <div class="ui container">
         <div class="ui stackable two column grid">
             <div class="column" id="works">
-                <img class="ui small centered image" src="<?= base_url("assets/image/logo-code-realm.svg"); ?>">
+                <img class="ui small centered image" src="<?= base_url("assets/image/works-learn.svg"); ?>">
             </div>
             <div class="column" id="works">
                 <div class="ui container">
                     <h2>Learn</h2>
-                    <p>Experienced, engaging instructors take you through course material, step by step, in our high-quality
-                        video lessons.</p>
+                    <p>Experienced, engaging instructors take you through course material, step by step, in our high-quality video lessons.</p>
                 </div>
             </div>
             <div class="column" id="works">
-                <img class="ui small centered image" src="<?= base_url("assets/image/logo-code-realm.svg"); ?>">
+                <img class="ui small centered image" src="<?= base_url("assets/image/works-win.svg"); ?>">
             </div>
             <div class="column" id="works">
                 <div class="ui container">
-                    <h2>Learn</h2>
-                    <p>Experienced, engaging instructors take you through course material, step by step, in our high-quality
-                        video lessons.</p>
+                    <h2>Win</h2>
+                    <p>Rack up points in the challenges and earn badges as you complete each course level, leading up to the coveted course completion badge.</p>
+                </div>
+            </div>
+            <div class="column" id="works">
+                <img class="ui small centered image" src="<?= base_url("assets/image/works-track.svg"); ?>">
+            </div>
+            <div class="column" id="works">
+                <div class="ui container">
+                    <h2>Track</h2>
+                    <p>Keep track of all your activity — points and badges earned, courses completed, screencasts watched, and more — with your Report Card.</p>
                 </div>
             </div>
         </div>

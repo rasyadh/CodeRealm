@@ -58,13 +58,18 @@ class Main extends CI_Controller {
 		return $skill;
 	}
 
-	public function index()
-	{
+	public function index(){
 		$data['title'] = "Role Playing Code";
 		$data_skill = $this->getSkill();
 		$data['skill_path'] = json_decode($data_skill);
-		$data['signin'] = false;
+		$data['signin'] = true;
 
 		$this->template->load('base', 'main/index', $data);
+	}
+
+	public function about(){
+		$data['title'] = "About";
+
+		$this->template->load('base', 'main/about', $data);
 	}
 }
