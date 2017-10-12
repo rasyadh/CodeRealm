@@ -1,6 +1,6 @@
 <section class="hero-main">
     <div class="ui center aligned container" id="hero-main-content">
-        <h1 class="ui inverted header">Role. Playing. Code.</h1>
+        <h1 class="ui inverted header">Role. Playing. Code. Jancok.</h1>
         <h2 class="ui inverted header">The Interactive learning and playfull like a game</h2>
         <br>
         <a class="ui large inverted button" href="<?= site_url('skills'); ?>">Explore Our Realm</a>
