@@ -1,4 +1,14 @@
 ###################
+Installation CodeRealm
+###################
+
+1. Clone Repository
+2. Tempatkan di htdocs XAMPP
+3. Cari file httpd.conf di Apache sub direktoru C:\xampp\apache\conf\httpd.conf
+4. Uncomment line #LoadModule rewrite_module modules/mod_rewrite.so menjadi LoadModule rewrite_module modules/mod_rewrite.so
+5. Save
+
+###################
 What is CodeIgniter
 ###################
 
