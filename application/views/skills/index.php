@@ -20,11 +20,11 @@
 
             <?php foreach ($skill_path as $skill){ ?>
                 <div class="raised card">
-                    <a class="image" href="<?= '#skills/'.strtolower($skill->name); ?>">
+                    <a class="image" href="<?= site_url('skills/'.strtolower($skill->name)); ?>">
                         <img src="<?= base_url("assets/image/Badge/".$skill->imgUrl); ?>">
                     </a>
                     <div class="content">
-                        <a class="header" href="<?= '#skills/'.strtolower($skill->name); ?>"><?= $skill->name; ?></a>
+                        <a class="header" href="<?= site_url('skills/'.strtolower($skill->name)); ?>"><?= $skill->name; ?></a>
                         <div class="meta">
                             <a><?= $skill->numOfCourse; ?> Courses</a>
                         </div>
