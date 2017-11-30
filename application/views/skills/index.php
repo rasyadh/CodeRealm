@@ -16,17 +16,17 @@
             <a class="item" href="<?= site_url('pvp'); ?>"><i class="game icon"></i>PvP</a>
         </div>
         <br>
-        <div class="ui three stackable link centered cards">
+        <div class="ui three stackable centered cards">
 
             <?php foreach ($skill_path as $skill){ ?>
                 <div class="raised card">
-                    <div class="image">
-                        <img src="<?= base_url($skill->imgUri); ?>">
-                    </div>
+                    <a class="image" href="<?= '#skills/'.strtolower($skill->name); ?>">
+                        <img src="<?= base_url("assets/image/Badge/".$skill->imgUrl); ?>">
+                    </a>
                     <div class="content">
-                        <div class="header"><?= $skill->name; ?></div>
+                        <a class="header" href="<?= '#skills/'.strtolower($skill->name); ?>"><?= $skill->name; ?></a>
                         <div class="meta">
-                            <a><?= $skill->numOfCourse; ?>Courses</a>
+                            <a><?= $skill->numOfCourse; ?> Courses</a>
                         </div>
                         <div class="description">
                             <?= $skill->description; ?>

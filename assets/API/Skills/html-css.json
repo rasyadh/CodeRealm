@@ -1,0 +1,48 @@
+[
+    {
+        "title": "HTML - CSS",
+        "description": "Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.",
+        "badgeUrl": "badge-html-css.svg",
+        "enrollUrl": "/skills",
+        "completedCourses": "0",
+        "numOfCourses": "4",
+        "courses": [
+            {
+                "titleCourse": "Getting Started With HTML and CSS",
+                "descriptionCourse": "HTML and CSS are the languages you can use to build and style websites. In these courses, you’ll learn the basics of HTML and CSS, build your first website, and then review some of the current HTML5 and CSS3 best practices.",
+                "course": [
+                    {
+                        "courseBadge": "HTML-CSS/frontend-foundation.png",
+                        "courseUrl": "/skills",
+                        "courseName": "Front-end Foundations",
+                        "courseDescription": "Learn how to build a website with HTML and CSS."
+                    },
+                    {
+                        "courseBadge": "HTML-CSS/frontend-formation.png",
+                        "courseUrl": "/skills",
+                        "courseName": "Front-end Formations",
+                        "courseDescription": "Learn the latest versions of HTML and CSS."
+                    }
+                ]
+            },
+            {
+                "titleCourse": "Intermediate CSS",
+                "descriptionCourse": "Simple CSS can get you pretty far, but once you start getting serious about front-end development, you need to get exposed to more advanced topics, such as specificity, floating, animations, and responsive design. These courses teach you some best practices for working with CSS and building responsive websites to get your users moving in the right direction.",
+                "course": [
+                    {
+                        "courseBadge": "HTML-CSS/css.png",
+                        "courseUrl": "/skills",
+                        "courseName": "CSS Cross-Country",
+                        "courseDescription": "Explore the fundamentals of CSS."
+                    },
+                    {
+                        "courseBadge": "HTML-CSS/css-mobile.png",
+                        "courseUrl": "/skills",
+                        "courseName": "Journey Into Mobile",
+                        "courseDescription": "Learn mobile-first, adaptive, and responsive web design."
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -7,6 +7,7 @@
                 <img src="<?= base_url("assets/image/logo-code-realm.svg"); ?>">
             </a>
         </div>
+        <!-- Menu -->
         <div class="item">
             <div class="ui floating dropdown item" id="header-learn-dropdown">
                 <strong>Learn Realm</strong>
@@ -19,6 +20,7 @@
             </div>
         </div>
         <div class="right item">
+            <!-- Search -->
             <div class="item">
                 <div class="ui search">
                     <div class="ui icon input">
@@ -29,6 +31,7 @@
                 </div>
             </div>
             <?php if ($signin == true){ ?>
+            <!-- Notification -->
             <div class="item">
                 <div class="ui floating dropdown icon" id="header-notification-dropdown">
                     <i class="large alarm icon"></i>
@@ -38,14 +41,27 @@
                         </div>
                         <div class="divider"></div>
                         <div class="item">
-                            <a href="">Show all new notification</a>
+                            <a href="<?= site_url('account/notification'); ?>">Show all new notification</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="item" href="">
-                <i class="large comments icon"></i>
-            </a>
+            <!-- Messages -->
+            <div class="item">
+                <div class="ui floating dropdown icon" id="header-message-dropdown">
+                    <i class="large comments icon"></i>
+                    <div class="menu">
+                        <div class="item">
+                            There is no new message.
+                        </div>
+                        <div class="divider"></div>
+                        <div class="item">
+                            <a href="<?= site_url('account/messages'); ?>">Show all new message</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Account -->
             <div class="item">
                 <div class="ui floating dropdown" id="header-account-dropdown">
                     <img class="ui avatar image" src="<?= base_url("assets/image/logo.svg"); ?>">
@@ -62,10 +78,14 @@
             }
             else {
             ?>
+            <!-- Sign Up -->
             <div class="item">
-                <?= anchor('users/signup', 'Create Free Account', 'class="ui primary basic button"'); ?>
+                <?= anchor('signup', 'Create Free Account', 'class="ui primary basic button"'); ?>
             </div>
-            <?= anchor('users/signin', 'Sign In', 'class="item"'); ?>
+            <!-- Sign In -->
+            <div class="item">
+                <?= anchor('signin', 'Sign In', 'class="ui primary button"'); ?>
+            </div>
             <?php } ?>
         </div>
     </div>

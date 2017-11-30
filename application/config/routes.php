@@ -52,3 +52,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// Main
+$route['about'] = 'main/about';
+$route['terms'] = 'main/about';
+$route['privacy'] = 'main/about';
+
+// Sign in
+$route['signin'] = 'users/signin';
+$route['signup'] = 'users/signup';
+
+// Skills
+$route['skills'] = 'skills/index';
+$route['skills/(:any)'] = 'skills/content';
+
+// Quest
+$route['quest'] = 'quest/index';
+
+// PvP
+$route['pvp'] = 'pvp/index';

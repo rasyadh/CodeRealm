@@ -14,17 +14,17 @@
         </p>
     </div>
     <div class="ui container">
-        <div class="ui three stackable link centered cards">
+        <div class="ui three stackable centered cards">
             
             <?php foreach ($skill_path as $skill){ ?>
                 <div class="raised card">
-                    <div class="image">
-                        <img src="<?= base_url($skill->imgUri); ?>">
-                    </div>
+                    <a class="image" href="<?= site_url('skills/'.strtolower($skill->name)); ?>">
+                        <img src="<?= base_url("assets/image/Badge/".$skill->imgUrl); ?>">
+                    </a>
                     <div class="content">
-                        <div class="header"><?= $skill->name; ?></div>
+                        <a class="header" href="<?= site_url('skills/'.strtolower($skill->name)); ?>"><?= $skill->name; ?></a>
                         <div class="meta">
-                            <a><?= $skill->numOfCourse; ?>Courses</a>
+                            <a><?= $skill->numOfCourse; ?> Courses</a>
                         </div>
                         <div class="description">
                             <?= $skill->description; ?>
@@ -44,7 +44,7 @@
     <div class="ui container">
         <div class="ui stackable two column grid">
             <div class="column" id="works">
-                <img class="ui small centered image" src="<?= base_url("assets/image/works-learn.svg"); ?>">
+                <img class="ui small centered image" src="<?= base_url("assets/image/Works/works-learn.svg"); ?>">
             </div>
             <div class="column" id="works">
                 <div class="ui container">
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="column" id="works">
-                <img class="ui small centered image" src="<?= base_url("assets/image/works-win.svg"); ?>">
+                <img class="ui small centered image" src="<?= base_url("assets/image/Works/works-win.svg"); ?>">
             </div>
             <div class="column" id="works">
                 <div class="ui container">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="column" id="works">
-                <img class="ui small centered image" src="<?= base_url("assets/image/works-track.svg"); ?>">
+                <img class="ui small centered image" src="<?= base_url("assets/image/Works/works-track.svg"); ?>">
             </div>
             <div class="column" id="works">
                 <div class="ui container">
@@ -86,7 +86,7 @@
                     <a class="ui inverted button" href="<?= site_url('quest'); ?>">Read the Guide</a>
             </div>
             <div class="column">
-                <img class="ui centered medium image" src="./assets/image/logo-code-realm.svg">
+                <img class="ui centered medium image" src="<?= base_url("assets/image/logo-code-realm.svg"); ?>">
             </div>
         </div>
     </div>

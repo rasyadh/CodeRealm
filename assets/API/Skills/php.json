@@ -1,0 +1,30 @@
+[
+    {
+        "title": "PHP",
+        "description": "Dig into one of the most prevalent programming languages and learn how PHP can help you develop various applications for the web.",
+        "badgeUrl": "badge-php.svg",
+        "enrollUrl": "/skills",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "Getting Started With PHP",
+                "descriptionCourse": "PHP is a server-side language with the ability to power everything from personal blogs to hugely popular websites. In these courses, you’ll learn the foundational elements of this versatile programming language, including its data types, conditionals, and more.",
+                "course": [
+                    {
+                        "courseBadge": "PHP/try-php.png",
+                        "courseUrl": "/skills",
+                        "courseName": "Try PHP",
+                        "courseDescription": "Begin building a foundation in one of the most widely used programming languages."
+                    },
+                    {
+                        "courseBadge": "PHP/close-php.png",
+                        "courseUrl": "/skills",
+                        "courseName": "Close Encounters With PHP",
+                        "courseDescription": "Look to the skies and work with forms, validation, and custom libraries."
+                    }
+                ]
+            }
+        ]
+    }
+]

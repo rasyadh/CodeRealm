@@ -17,9 +17,9 @@
                         <div class="item">
                             <div class="header">About Us</div>
                         </div>
-                        <div class="item"><a href="<?= site_url('main/about'); ?>">Company</a></div>
-                        <div class="item"><a href="<?= site_url('main/about'); ?>">Terms of Use</a></div>
-                        <div class="item"><a href="<?= site_url('main/about'); ?>">Privacy Police</a></div>
+                        <div class="item"><a href="<?= site_url('about'); ?>">Company</a></div>
+                        <div class="item"><a href="<?= site_url('terms'); ?>">Terms of Use</a></div>
+                        <div class="item"><a href="<?= site_url('privacy'); ?>">Privacy Police</a></div>
                     </div>
                 </div>
                 <div class="three wide column">
@@ -27,9 +27,9 @@
                         <div class="item">
                             <div class="header">Need Help?</div>
                         </div>
-                        <div class="item"><a href="#">Contact Us</a></div>
-                        <div class="item"><a href="#">Knowledge Base</a></div>
-                        <div class="item"><a href="#">Forum</a></div>
+                        <div class="item"><a href="<?= site_url(); ?>">Contact Us</a></div>
+                        <div class="item"><a href="<?= site_url(); ?>">Knowledge Base</a></div>
+                        <div class="item"><a href="<?= site_url(); ?>">Forum</a></div>
                     </div>
                 </div>
                 <div class="seven wide column">

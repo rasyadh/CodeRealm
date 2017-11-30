@@ -47,21 +47,28 @@ h1, h2, h3, h4, h5, h6, p {
 
 /** Hero **/
 .hero-main {
-    background-image: url(../image/bg-hero-main.svg);
+    background-image: url(../image/Hero/bg-hero-main.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .hero-skills {
-    background-image: url(../image/bg-hero-blue.svg);
+    background-image: url(../image/Hero/bg-hero-blue.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .hero-quest {
-    background-image: url(../image/bg-hero-green.svg);
+    background-image: url(../image/Hero/bg-hero-green.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-pvp {
+    background-image: url(../image/Hero/bg-hero-red.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,6 +92,15 @@ h1, h2, h3, h4, h5, h6, p {
     background: #f6f8f8;
 }
 
+.account {
+    padding: 30px;
+    background: #f6f8f8;
+}
+
+#content-account {
+    margin-bottom: 50px;
+}
+
 #how-coderealm-works {
     padding: 50px;
 }
@@ -94,7 +110,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #badges-rank {
-    background-image: url(../image/bg-hero-purple.svg);
+    background-image: url(../image/Hero/bg-hero-purple.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -104,9 +120,22 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 70px;
 }
 
+.title-course {
+    margin-bottom: 20px;
+}
+
+#recently-played-img {
+    background: white;
+    padding: 30px;
+}
+
 /** Footer **/
 #footer-content {
     padding: 30px;
+}
+
+#footer-info {
+    color: white;
 }
 
 #copyright {

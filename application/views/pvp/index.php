@@ -1,9 +1,9 @@
-<section class="hero-skills">
+<section class="hero-pvp">
     <div class="ui center aligned container" id="hero-content">
         <div class="ui container">
             <h1 class="ui inverted header">Player Vs Player</h1>
-            <p class="ui inverted header">Curated skill paths to help you develop the right skills in the right order</p>
-            <a class="ui large black button" href="<?= site_url('users/signup'); ?>">Enroll Now</a>
+            <p class="ui inverted header">Test your skill with playing this PVP gameplay</p>
+            <a class="ui large black button" href="<?= site_url('users/signup'); ?>">Fight Now</a>
         </div>
     </div>
 </section>

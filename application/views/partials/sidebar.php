@@ -28,15 +28,29 @@
         </div>
         <?php if ($signin == true){ ?>
         <div class="item">
-            <div class="ui dropdown">
-                <div class="text">Account</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="<?= site_url(); ?>"><i class="blue dashboard icon"></i>My Dashboard</a>
-                    <a class="item" href="<?= site_url(); ?>"><i class="blue book icon"></i>My Report Card</a>
-                    <a class="item" href="<?= site_url(); ?>"><i class="blue user icon"></i>My Profile</a>
-                </div>
-            </div>
+            <a href="<?= site_url('account/notification'); ?>">
+                <i class="alarm icon"></i> Notification
+            </a>
+        </div>
+        <div class="item">
+            <a href="<?= site_url('account/messages'); ?>">
+                <i class="comments icon"></i> Messages
+            </a>
+        </div>
+        <div class="item">
+            <a href="<?= site_url(); ?>">
+                <i class="dashboard icon"></i> My Dashboard
+            </a>
+        </div>
+        <div class="item">
+            <a href="<?= site_url(); ?>">
+                <i class="book icon"></i> My Report Card
+            </a>
+        </div>
+        <div class="item">
+            <a href="<?= site_url(); ?>">
+                <i class="user icon"></i> My Profile
+            </a>
         </div>
         <div class="item">
             <?= anchor('main/index', 'Sign Out', 'class="ui basic primary button"'); ?>
@@ -46,8 +60,8 @@
         else {
         ?>
         <div class="item">
-            <?= anchor('users/signup', 'Create Free Account', 'class="ui basic primary button"'); ?>
-            <?= anchor('users/signin', 'Sign In', 'class="ui primary button"'); ?>
+            <?= anchor('signup', 'Create Free Account', 'class="ui basic primary button"'); ?>
+            <?= anchor('signin', 'Sign In', 'class="ui primary button"'); ?>
         </div>
         <?php } ?>
     </div>
