@@ -4,7 +4,7 @@ RewriteEngine On
 # The base URL path
 # If your URL is www.example.com/, then use /
 # If your URL is www.example.com/site_folder/www, then use /site_folder/www/
-RewriteBase /
+RewriteBase /CodeRealm
 
 # Do not enable rewriting for files or directories that exist
 RewriteCond %{REQUEST_FILENAME} !-d
