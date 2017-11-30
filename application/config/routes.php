@@ -71,3 +71,13 @@ $route['quest'] = 'quest/index';
 
 // PvP
 $route['pvp'] = 'pvp/index';
+
+// Account
+$route['account'] = 'account/index';
+$route['account/history'] = 'account/history';
+$route['account/rewards'] = 'account/rewards';
+$route['account/profile'] = 'account/profile';
+$route['account/report'] = 'account/report';
+
+// Notification
+$route['notification'] = 'notification/index';

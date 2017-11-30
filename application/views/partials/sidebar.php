@@ -28,7 +28,7 @@
         </div>
         <?php if ($signin == true){ ?>
         <div class="item">
-            <a href="<?= site_url('account/notification'); ?>">
+            <a href="<?= site_url('notification'); ?>">
                 <i class="alarm icon"></i> Notification
             </a>
         </div>
@@ -38,17 +38,17 @@
             </a>
         </div>
         <div class="item">
-            <a href="<?= site_url(); ?>">
+            <a href="<?= site_url('account'); ?>">
                 <i class="dashboard icon"></i> My Dashboard
             </a>
         </div>
         <div class="item">
-            <a href="<?= site_url(); ?>">
+            <a href="<?= site_url('account/report'); ?>">
                 <i class="book icon"></i> My Report Card
             </a>
         </div>
         <div class="item">
-            <a href="<?= site_url(); ?>">
+            <a href="<?= site_url('account/profile'); ?>">
                 <i class="user icon"></i> My Profile
             </a>
         </div>

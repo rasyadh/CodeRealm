@@ -41,7 +41,7 @@
                         </div>
                         <div class="divider"></div>
                         <div class="item">
-                            <a href="<?= site_url('account/notification'); ?>">Show all new notification</a>
+                            <a href="<?= site_url('notification'); ?>">Show all new notification</a>
                         </div>
                     </div>
                 </div>
@@ -67,9 +67,9 @@
                     <img class="ui avatar image" src="<?= base_url("assets/image/logo.svg"); ?>">
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a class="item" href="<?= site_url(); ?>"><i class="blue dashboard icon"></i>My Dashboard</a>
-                        <a class="item" href="<?= site_url(); ?>"><i class="blue book icon"></i>My Report Card</a>
-                        <a class="item" href="<?= site_url(); ?>"><i class="blue user icon"></i>My Profile</a>
+                        <a class="item" href="<?= site_url('account'); ?>"><i class="blue dashboard icon"></i>My Dashboard</a>
+                        <a class="item" href="<?= site_url('account/report'); ?>"><i class="blue book icon"></i>My Report Card</a>
+                        <a class="item" href="<?= site_url('account/profile'); ?>"><i class="blue user icon"></i>My Profile</a>
                         <a class="item" href="<?= site_url(); ?>"><i class="blue sign out icon"></i>Sign Out</a>
                     </div>
                 </div>

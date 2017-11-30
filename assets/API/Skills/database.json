@@ -2,7 +2,7 @@
     {
         "title": "Database",
         "description": "Take control of your application’s data layer by learning SQL, and take NoSQL for a spin if you’re feeling non-relational.",
-        "badgeUrl": "badge-database.svg",
+        "badgeUrl": "assets/image/Badge/badge-database.svg",
         "enrollUrl": "/skills",
         "completedCourses": "0",
         "numOfCourses": "2",
@@ -12,13 +12,13 @@
                 "descriptionCourse": "Discover how to manipulate relational database systems using SQL. In these courses, you’ll learn how to create a database and work with data inside of it, as well as best practices for modeling data in your apps.",
                 "course": [
                     {
-                        "courseBadge": "SQL/try-sql.png",
+                        "courseBadge": "assets/image/Course/SQL/try-sql.png",
                         "courseUrl": "/skills",
                         "courseName": "Try SQL",
                         "courseDescription": "Learn basic database manipulation with SQL."
                     },
                     {
-                        "courseBadge": "SQL/sequel-sql.png",
+                        "courseBadge": "assets/image/Course/SQL/sequel-sql.png",
                         "courseUrl": "/skills",
                         "courseName": "The Sequel to SQL",
                         "courseDescription": "Move beyond the basics and learn the most powerful features of relational databases."
