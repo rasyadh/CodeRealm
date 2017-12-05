@@ -6,12 +6,12 @@ class Users extends CI_Controller {
     public function signin(){
         $data['title'] = "Sign In";
 
-        $this->template->load('base-sign', 'users/signin', $data);
+        $this->template->load('base_sign', 'users/signin', $data);
     }
 
     public function signup(){
         $data['title'] = "Sign Up";
         
-        $this->template->load('base-sign', 'users/signup', $data);
+        $this->template->load('base_sign', 'users/signup', $data);
     }
 }

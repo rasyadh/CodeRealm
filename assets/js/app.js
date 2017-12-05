@@ -7,9 +7,18 @@ $(document).ready(function () {
         transition: 'fade up'
     });
 
-    $('#header-account-dropdown').dropdown();
-    $('#header-notification-dropdown').dropdown();
-    $('#header-message-dropdown').dropdown();
+    $('#header-account-dropdown').dropdown({
+        on: 'hover',
+        transition: 'fade up'
+    });
+    $('#header-notification-dropdown').dropdown({
+        on: 'hover',
+        transition: 'fade up'
+    });
+    $('#header-message-dropdown').dropdown({
+        on: 'hover',
+        transition: 'fade up'
+    });
 
     $('.ui.search').search({
         source: content

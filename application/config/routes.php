@@ -53,6 +53,9 @@ $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/**
+ * Client Site
+ */
 // Main
 $route['about'] = 'main/about';
 $route['terms'] = 'main/about';
@@ -81,3 +84,20 @@ $route['account/report'] = 'account/report';
 
 // Notification
 $route['notification'] = 'notification/index';
+
+/**
+ * Admin Site
+ */
+
+// Sign In & Sign Out
+$route['admin'] = 'Admin/admin/index';
+$route['admin/signin'] = 'Admin/admin/admin_signin';
+$route['admin/signout'] = 'Admin/admin/admin_signout';
+
+// Dashboard
+$route['admin/dashboard'] = 'Admin/admin/dashboard';
+$route['admin/skills'] = 'Admin/skills/index';
+$route['admin/skills/edit/(:any)'] = 'Admin/skills/edit_skill';
+$route['admin/skills/path/(:any)'] = 'Admin/skills/path';
+$route['admin/skills/path/course'] = 'Admin/skills/course';
+$route['admin/account'] = 'Admin/admin/account';
