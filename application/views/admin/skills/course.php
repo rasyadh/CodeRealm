@@ -3,12 +3,13 @@
         <h2><?= $title; ?></h2>
 
         <div class="ui blue padded segment">
-            <h3>Javascript</h3>
-            <p>Spend some time with this powerful scripting language and learn to build lightweight applications with enhanced user interfaces.</p>
-            <br />
+            <h3><?= $path['title_path']; ?></h3>
+            <p><?= $path['description']; ?></p>
 
             <button class="ui primary button" id="add">Add New Course</button>
-            <table class="ui stackable structured table" id="tables">
+            <br /><br />
+
+            <table class="ui stackable table" id="tables">
                 <thead>
                     <tr>
                         <th>ID Course</th>
@@ -21,10 +22,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($data_course as $course) { ?>
                     <tr>
-                        <td colspan="7">Empty</td>
+                        <td><?= $course->id_skill_course; ?></td>
+                        <td><img class="ui tiny image" src="<?= $course->skill_course_badge; ?>" /></td>
+                        <td><?= $course->name_course; ?></td>
+                        <td><?= $course->description; ?></td>
+                        <td><?= $course->skill_course_url; ?></td>
+                        <td><?= $course->created_at; ?></td>
+                        <td>
+                            <div class="ui icon buttons">
+                                <a class="ui yellow button" href="<?= site_url('admin/skills/path/course/edit/'.$course->id_skill_course); ?>"><i class="edit icon"></i></a>
+                                <a class="ui red button"><i class="trash icon"></i></a>
+                            </div>
+                        </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
+                <tfoot>
+                    <tr></tr>
+                </tfoot>
             </table>
         </div>
     </div>
@@ -36,7 +53,8 @@
         Add New Course
     </div>
     <div class="content">
-        <?= form_open('skills/add', 'class="ui form"'); ?>
+        <?= form_open_multipart('admin/skills/add_course', 'class="ui form"'); ?>
+            <?= form_hidden('id_skill_path', $path['id_skill_path']); ?>
             <div class="required field">
                 <label>Name Course</label>
                 <?= form_input('name', '', array('placeholder'=>'Name Course', 'required'=>'')); ?>
@@ -47,9 +65,13 @@
             </div>
             <div class="required field">
                 <label>Course URL</label>
-                <?= form_input('course_url', '', array('placeholder'=>'Course URL', 'required'=>'')); ?>
+                <?= form_input('skill_course_url', '', array('placeholder'=>'Course URL', 'required'=>'')); ?>
             </div>
-            <?= form_submit('submit', 'Save Course', 'class="ui fluid primary button"'); ?>
+            <div class="required field">
+                <label>Course Badge (type: png, jpg)</label>
+                <?= form_upload('skill_course_badge', ''); ?>
+            </div>
+            <?= form_submit('add_course', 'Save Course', 'class="ui fluid primary button"'); ?>
         <?= form_close(); ?>
     </div>
 </div>

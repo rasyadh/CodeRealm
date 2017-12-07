@@ -6,7 +6,7 @@
             <a class="ui button" href="<?= site_url('admin/skills'); ?>"><i class="angle left icon"></i>Back</a>
             <br/><br/>
 
-            <?= form_open('admin/skills/save_edit', 'class="ui form"'); ?>
+            <?= form_open('admin/skills/save_edit_skill', 'class="ui form"'); ?>
                 <?= form_hidden('id_skill', $skill['id_skill']); ?>
                 <div class="required field">
                     <label>Name</label>

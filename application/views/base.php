@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <html>
 
+<?php
+if (isset($this->session->userdata['user_signed_in'])) {
+    $email = $this->session->userdata['user_signed_in']['email'];
+    $photo_url = $this->session->userdata['user_signed_in']['photo_url'];
+}
+?>
+
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8" />

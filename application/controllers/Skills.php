@@ -4,23 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Skills extends CI_Controller {
 
 	public function index() {
+		$this->load->model('skillsmodel');
 		$data['title'] = "Skills Path";
 
-		$data_skill = file_get_contents('assets/API/skills.json');
-		$data['skill_path'] = json_decode($data_skill);
-		$data['signin'] = true;
+		$data['skills'] = json_decode($this->skillsmodel->getMainPage());
 
 		$this->template->load('base', 'skills/index', $data);
 	}
 
 	public function content() {
+		$this->load->model('skillsmodel');
 		$title = str_replace("skills/", "", uri_string());
 
 		$data['title'] = $title;
-		$data['signin'] = true;
 
-		$content = file_get_contents('assets/API/Skills/'.$title.'.json');
-		$data['skill_content'] = json_decode($content);
+		$data['content'] = json_decode($this->skillsmodel->getSkillContent(current_url()));
 
 		$this->template->load('base', 'skills/skill-content', $data);
 	}

@@ -7,7 +7,7 @@
                     <form class="ui form" enctype="multipart/form-data">
                         <div class="fields">
                             <div class="field">
-                                <img class="ui tiny circular image" src="<?= base_url('assets/image/logo.svg'); ?>" alt="photoprofile" />
+                                <img class="ui tiny circular image" src="<?= $data_user[0]->photo_url; ?>" alt="photoprofile" />
                             </div>
                             <div class="field">
                                 <label>Change Photo</label>

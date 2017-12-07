@@ -8,7 +8,6 @@ class Quest extends CI_Controller {
 		
 		$data_skill = file_get_contents('assets/API/skills.json');
 		$data['skill_path'] = json_decode($data_skill);
-		$data['signin'] = true;
 
 		$this->template->load('base', 'quest/index', $data);
 	}

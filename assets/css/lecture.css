@@ -1,0 +1,37 @@
+/** Typhography **/
+body {
+    color: #575a5b;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #575a5b;
+}
+
+#text-white {
+    color: #ffffff;
+}
+
+/** Global **/
+#logo-code-realm {
+    margin: 30px;
+}
+
+/** Override Semantic UI */
+.ui.button {
+    border-radius: 2.285714rem;
+}
+
+.ui.basic.button, .ui.basic.buttons .button {
+    border-radius: 2.285714rem;
+}
+
+/** Content **/
+.main {
+    padding: 20px;
+}

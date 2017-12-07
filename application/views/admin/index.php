@@ -2,7 +2,6 @@
 if (isset($this->session->userdata['admin_signed_in'])) {
     header("location: http://localhost/CodeRealm/admin/dashboard");
 }
-
 ?>
 
 <div class="ui text container">

@@ -16,7 +16,9 @@
             <br />
 
             <button class="ui primary button" id="add">Add New Path</button>
-            <table class="ui stackable structured table" id="tables">
+            <br /><br />
+
+            <table class="ui stackable table" id="tables">
                 <thead>
                     <tr>
                         <th>ID Path</th>
@@ -27,10 +29,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($data_path as $path) { ?>
                     <tr>
-                        <td colspan="5">Empty</td>
+                        <td><?= $path->id_skill_path; ?></td>
+                        <td><?= $path->title_path; ?></td>
+                        <td><?= $path->description; ?></td>
+                        <td><?= $path->created_at; ?></td>
+                        <td>
+                            <div class="ui icon buttons">
+                                <a class="ui green button" href="<?= site_url('admin/skills/path/course/'.$path->id_skill_path); ?>"><i class="info icon"></i></a>
+                                <a class="ui yellow button" href="<?= site_url('admin/skills/path/edit/'.$path->id_skill_path); ?>"><i class="edit icon"></i></a>
+                                <a class="ui red button"><i class="trash icon"></i></a>
+                            </div>
+                        </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
+                <tfoot>
+                    <tr></tr>
+                </tfoot>
             </table>
         </div>
     </div>
@@ -42,16 +59,17 @@
         Add New Path
     </div>
     <div class="content">
-        <?= form_open('skills/add', 'class="ui form"'); ?>
+        <?= form_open('admin/skills/add_path', 'class="ui form"'); ?>
+            <?= form_hidden('id_skill', $skill['id_skill']); ?>
             <div class="required field">
                 <label>Title Path</label>
                 <?= form_input('title', '', array('placeholder'=>'Title Path', 'required'=>'')); ?>
             </div>
             <div class="required field">
                 <label>Description</label>
-                <?= form_input('description', '', array('placeholder'=>'Description', 'required'=>'')); ?>
+                <?= form_textarea('description', '', array('placeholder'=>'Description', 'required'=>'')); ?>
             </div>
-            <?= form_submit('submit', 'Save Path', 'class="ui fluid primary button"'); ?>
+            <?= form_submit('add_path', 'Save Path', 'class="ui fluid primary button"'); ?>
         <?= form_close(); ?>
     </div>
 </div>

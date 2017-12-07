@@ -18,13 +18,13 @@
         <br>
         <div class="ui three stackable centered cards">
 
-            <?php foreach ($skill_path as $skill){ ?>
+            <?php foreach ($skills as $skill) { ?>
                 <div class="raised card">
-                    <a class="image" href="<?= site_url('skills/'.strtolower($skill->name)); ?>">
-                        <img src="<?= base_url($skill->imgUrl); ?>">
+                    <a class="image" href="<?= $skill->enrollUrl; ?>">
+                        <img src="<?= $skill->skillBadge; ?>">
                     </a>
                     <div class="content">
-                        <a class="header" href="<?= site_url('skills/'.strtolower($skill->name)); ?>"><?= $skill->name; ?></a>
+                        <a class="header" href="<?= $skill->enrollUrl; ?>"><?= $skill->name; ?></a>
                         <div class="meta">
                             <a><?= $skill->numOfCourse; ?> Courses</a>
                         </div>

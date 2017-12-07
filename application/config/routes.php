@@ -88,16 +88,26 @@ $route['notification'] = 'notification/index';
 /**
  * Admin Site
  */
-
 // Sign In & Sign Out
 $route['admin'] = 'Admin/admin/index';
-$route['admin/signin'] = 'Admin/admin/admin_signin';
-$route['admin/signout'] = 'Admin/admin/admin_signout';
+$route['admin/signin'] = 'Admin/admin/signin';
+$route['admin/signout'] = 'Admin/admin/signout';
 
 // Dashboard
 $route['admin/dashboard'] = 'Admin/admin/dashboard';
 $route['admin/skills'] = 'Admin/skills/index';
 $route['admin/skills/edit/(:any)'] = 'Admin/skills/edit_skill';
 $route['admin/skills/path/(:any)'] = 'Admin/skills/path';
-$route['admin/skills/path/course'] = 'Admin/skills/course';
+$route['admin/skills/path/edit/(:any)'] = 'Admin/skills/edit_path';
+$route['admin/skills/path/course/(:any)'] = 'Admin/skills/course';
+$route['admin/skills/path/course/edit/(:any)'] = 'Admin/skills/edit_course';
 $route['admin/account'] = 'Admin/admin/account';
+
+/**
+ * Lecture Site
+ */
+// Sign In & Sign Out
+$route['lecture'] = 'Lecture/lecture/index';
+
+// Dashboard
+$route['lecture/dashboard'] = 'Lecture/lecture/dashboard';

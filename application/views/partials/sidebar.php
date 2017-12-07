@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <?php if ($signin == true){ ?>
+        <?php if (isset($this->session->userdata['user_signed_in'])){ ?>
         <div class="item">
             <a href="<?= site_url('notification'); ?>">
                 <i class="alarm icon"></i> Notification
@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="item">
-            <?= anchor('main/index', 'Sign Out', 'class="ui basic primary button"'); ?>
+            <?= anchor('users/signout', 'Sign Out', 'class="ui basic primary button"'); ?>
         </div>
         <?php
         }

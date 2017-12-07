@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <section class="sign-up-in">
         <div id="logo-code-realm">
-            <a href="<?= base_url(); ?>">
+            <a href="<?= site_url(); ?>">
                 <img class="ui centered medium image"  src="<?= base_url("assets/image/logo-code-realm.svg"); ?>">
             </a>
         </div>

@@ -30,7 +30,7 @@
                     <div class="result"></div>
                 </div>
             </div>
-            <?php if ($signin == true){ ?>
+            <?php if (isset($this->session->userdata['user_signed_in'])){ ?>
             <!-- Notification -->
             <div class="item">
                 <div class="ui floating dropdown icon" id="header-notification-dropdown">
@@ -64,13 +64,13 @@
             <!-- Account -->
             <div class="item">
                 <div class="ui floating dropdown" id="header-account-dropdown">
-                    <img class="ui avatar image" src="<?= base_url("assets/image/logo.svg"); ?>">
+                    <img class="ui avatar image" src="<?= $photo_url; ?>">
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <a class="item" href="<?= site_url('account'); ?>"><i class="blue dashboard icon"></i>My Dashboard</a>
                         <a class="item" href="<?= site_url('account/report'); ?>"><i class="blue book icon"></i>My Report Card</a>
                         <a class="item" href="<?= site_url('account/profile'); ?>"><i class="blue user icon"></i>My Profile</a>
-                        <a class="item" href="<?= site_url(); ?>"><i class="blue sign out icon"></i>Sign Out</a>
+                        <a class="item" href="<?= site_url('users/signout'); ?>"><i class="blue sign out icon"></i>Sign Out</a>
                     </div>
                 </div>
             </div>
