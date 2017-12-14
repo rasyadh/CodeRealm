@@ -1,7 +1,13 @@
+<?php
+if (isset($this->session->userdata['lecture_signed_in'])) {
+    header("location: http://localhost/CodeRealm/lecture/dashboard");
+}
+?>
+
 <div class="ui text container">
     <h1>Lecture Site</h1>
 
-    <?= form_open('', 'class="ui form signin"'); ?>
+    <?= form_open('lecture/lecture/signin', 'class="ui form signin"'); ?>
         <div class="ui error message"></div>
         <div class="field">
             <label for="email">Email</label>

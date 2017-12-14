@@ -89,7 +89,8 @@ class Users extends CI_Controller {
 
     public function signout() {
         $session_arr = array(
-            'email' => ''
+            'email' => '',
+            'photo_url' => ''
         );
 
         $this->session->unset_userdata('user_signed_in', $session_arr);

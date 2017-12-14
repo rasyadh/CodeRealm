@@ -55,9 +55,11 @@
                                 0/<?= $content[0]->numOfCourse; ?>Complete
                         </div>
                         </div>
-                        <div class="extra content">
-                            My Account
-                    </div>
+                        <?php if (isset($this->session->userdata['user_signed_in'])) { ?>
+                            <div class="extra content">
+                                <a href="<?= site_url('account'); ?>">My Account</a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>  
             </div>

@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <html>
 
+<?php
+if (isset($this->session->userdata['lecture_signed_in'])) {
+    $email = $this->session->userdata['lecture_signed_in']['email'];
+} 
+else {
+    header("location: http://localhost/CodeRealm/lecture/");
+}
+?>
+
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8" />

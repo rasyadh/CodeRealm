@@ -108,6 +108,11 @@ $route['admin/account'] = 'Admin/admin/account';
  */
 // Sign In & Sign Out
 $route['lecture'] = 'Lecture/lecture/index';
+$route['lecture/signin'] = 'Lecture/lecture/signin';
+$route['lecture/signout'] = 'Lecture/lecture/signout';
 
 // Dashboard
 $route['lecture/dashboard'] = 'Lecture/lecture/dashboard';
+$route['lecture/quest'] = 'Lecture/quest/index';
+$route['lecture/enroll'] = 'Lecture/enroll/index';
+$route['lecture/account'] = 'Lecture/lecture/account';
