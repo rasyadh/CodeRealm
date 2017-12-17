@@ -3,7 +3,15 @@
     <div class="ui container">
         <h1 class="ui inverted header"><?= $content[0]->name; ?></h1>
         <p class="ui inverted header"><?= $content[0]->description; ?></p>
-        <a class="ui large black button" href="<?= $content[0]->enrollUrl; ?>">Enroll Now</a>
+        <?php if (isset($this->session->userdata['user_signed_in'])) { ?>            
+            <?php if ($enroll['enroll_status']) { ?>
+                <a class="ui large black button" href="<?= site_url('skills/unenroll/'.$enroll['id_enroll_skills'].'/'.$user['id_skill'].'/'.$enroll['enroll_status']); ?>">Enrolled</a>    
+            <?php } else { ?>
+                <a class="ui large black button" href="<?= site_url('skills/enroll/'.$user['id_user'].'/'.$user['id_skill']); ?>">Enroll Now</a>    
+            <?php } ?>
+        <?php } else { ?>
+            <a class="ui large black button" href="<?= site_url('signin'); ?>">Enroll Now</a>    
+        <?php } ?>
     </div>
 </div>
 </section>
@@ -23,13 +31,13 @@
                             <div class="ui segment">
                                 <div class="ui stackable middle aligned grid">
                                     <div class="three wide column">
-                                        <a href="<?= $course->courseUrl; ?>">
+                                        <a href="<?= $course->courseBadge; ?>">
                                             <img class="ui small circular image" src="<?= $course->courseBadge; ?>" alt="<?= $course->courseName; ?>" />
                                         </a>
                                     </div>
                                     <div class="thirteen wide column">
                                         <div class="ui small label">Course</div><br />
-                                        <a href="<?= $course->courseUrl; ?>"><h2><?= $course->courseName; ?></h2></a>
+                                        <a href="<?= site_url('skills/download/'.$content[0]->skillFile); ?>"><h2><?= $course->courseName; ?></h2></a>
                                         <p><?= $course->description; ?></p>
                                     </div>
                                 </div>
@@ -49,10 +57,10 @@
                         </div>
                         <div class="content">
                             <div class="header">
-                                Courses Complete
+                                Courses
                         </div>
                             <div class="meta">
-                                0/<?= $content[0]->numOfCourse; ?>Complete
+                                <?= $content[0]->numOfCourse; ?> Course
                         </div>
                         </div>
                         <?php if (isset($this->session->userdata['user_signed_in'])) { ?>

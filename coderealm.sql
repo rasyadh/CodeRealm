@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2017 at 09:12 AM
+-- Generation Time: Dec 17, 2017 at 04:02 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -45,6 +45,29 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id_admin`, `id_role`, `name`, `email`, `password`, `photo_url`, `created_at`) VALUES
 (1, 1, 'Rasyadh Abdul Aziz', 'rasyadhabdulaziz@gmail.com', 'adminrasyadh', 'http://localhost/CodeRealm/assets/image/Admin/rasyadh.jpg', '2017-12-06 16:07:34'),
 (2, 1, 'admin', 'admin@coderealm.com', 'admincoderealm', '', '2017-12-14 07:58:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enroll_skills`
+--
+
+CREATE TABLE `enroll_skills` (
+  `id_enroll_skills` int(11) NOT NULL,
+  `id_skill` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `enroll_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 = false, 1 = true'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `enroll_skills`
+--
+
+INSERT INTO `enroll_skills` (`id_enroll_skills`, `id_skill`, `id_user`, `enroll_status`) VALUES
+(1, 1, 1, 1),
+(2, 2, 1, 1),
+(3, 2, 2, 1),
+(4, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -102,6 +125,7 @@ CREATE TABLE `skills` (
   `description` text NOT NULL,
   `skill_badge` varchar(255) NOT NULL,
   `enroll_url` varchar(255) NOT NULL,
+  `skill_file` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -109,14 +133,14 @@ CREATE TABLE `skills` (
 -- Dumping data for table `skills`
 --
 
-INSERT INTO `skills` (`id_skill`, `skill_name`, `description`, `skill_badge`, `enroll_url`, `created_at`) VALUES
-(1, 'HTML - CSS', 'Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.', 'http://localhost/CodeRealm/assets/image/Badge/badge-html-css.png', 'http://localhost/CodeRealm/skills/html-css', '2017-12-05 11:42:32'),
-(2, 'JavaScript', 'Spend some time with this powerful scripting language and learn to build lightweight applications with enhanced user interfaces. ', 'http://localhost/CodeRealm/assets/image/Badge/badge-javascript.png', 'http://localhost/CodeRealm/skills/javascript', '2017-12-05 04:27:03'),
-(3, 'Ruby', 'Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.', 'http://localhost/CodeRealm/assets/image/Badge/badge-ruby.png', 'http://localhost/CodeRealm/skills/ruby', '2017-12-05 04:28:57'),
-(4, 'PHP', 'Dig into one of the most prevalent programming languages and learn how PHP can help you develop various applications for the web.', 'http://localhost/CodeRealm/assets/image/Badge/badge-php.png', 'http://localhost/CodeRealm/skills/php', '2017-12-05 04:30:47'),
-(5, 'Python', 'Explore what it means to store and manipulate data, make decisions with your program, and leverage the power of Python.', 'http://localhost/CodeRealm/assets/image/Badge/badge-python.png', 'http://localhost/CodeRealm/skills/python', '2017-12-05 04:31:57'),
-(6, 'Git', 'Build a solid foundation in Git, then pair it with advanced version control skills. Learn how to collaborate on projects effectively with GitHub.', 'http://localhost/CodeRealm/assets/image/Badge/badge-git.png', 'http://localhost/CodeRealm/skills/git', '2017-12-05 04:32:21'),
-(7, 'Database', 'Take control of your application’s data layer by learning SQL, and take NoSQL for a spin if you’re feeling non-relational.', 'http://localhost/CodeRealm/assets/image/Badge/badge-database.png', 'http://localhost/CodeRealm/skills/database', '2017-12-05 04:32:46');
+INSERT INTO `skills` (`id_skill`, `skill_name`, `description`, `skill_badge`, `enroll_url`, `skill_file`, `created_at`) VALUES
+(1, 'HTML - CSS', 'Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.', 'http://localhost/CodeRealm/assets/image/Badge/badge-html-css.png', 'http://localhost/CodeRealm/skills/html-css', 'css-coderealm.docx', '2017-12-17 14:39:33'),
+(2, 'JavaScript', 'Spend some time with this powerful scripting language and learn to build lightweight applications with enhanced user interfaces. ', 'http://localhost/CodeRealm/assets/image/Badge/badge-javascript.png', 'http://localhost/CodeRealm/skills/javascript', 'javascript-coderealm.docx', '2017-12-17 14:40:25'),
+(3, 'Ruby', 'Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.', 'http://localhost/CodeRealm/assets/image/Badge/badge-ruby.png', 'http://localhost/CodeRealm/skills/ruby', 'ruby-coderealm.docx', '2017-12-17 14:40:34'),
+(4, 'PHP', 'Dig into one of the most prevalent programming languages and learn how PHP can help you develop various applications for the web.', 'http://localhost/CodeRealm/assets/image/Badge/badge-php.png', 'http://localhost/CodeRealm/skills/php', 'php-coderealm.docx', '2017-12-17 14:40:43'),
+(5, 'Python', 'Explore what it means to store and manipulate data, make decisions with your program, and leverage the power of Python.', 'http://localhost/CodeRealm/assets/image/Badge/badge-python.png', 'http://localhost/CodeRealm/skills/python', 'python-coderealm.docx', '2017-12-17 14:40:53'),
+(6, 'Git', 'Build a solid foundation in Git, then pair it with advanced version control skills. Learn how to collaborate on projects effectively with GitHub.', 'http://localhost/CodeRealm/assets/image/Badge/badge-git.png', 'http://localhost/CodeRealm/skills/git', 'git-coderealm.docx', '2017-12-17 14:41:02'),
+(7, 'Database', 'Take control of your application’s data layer by learning SQL, and take NoSQL for a spin if you’re feeling non-relational.', 'http://localhost/CodeRealm/assets/image/Badge/badge-database.png', 'http://localhost/CodeRealm/skills/database', 'database-coderealm.docx', '2017-12-17 14:41:16');
 
 -- --------------------------------------------------------
 
@@ -209,7 +233,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `id_role`, `name`, `email`, `username`, `password`, `photo_url`, `created_at`) VALUES
-(1, 3, 'Rasyadh Abdul Aziz', 'rasyadhabdulaziz@gmail.com', 'rasyadh', 'rasyadh', 'http://localhost/CodeRealm/assets/image/User/rasyadh.jpg', '2017-12-07 04:32:14');
+(1, 3, 'Rasyadh Abdul Aziz', 'rasyadhabdulaziz@gmail.com', 'rasyadh', 'rasyadh', 'http://localhost/CodeRealm/assets/image/User/rasyadh.jpg', '2017-12-07 04:32:14'),
+(2, 3, 'Muhammad Fatih Abdus Salam', 'mfatihas97@gmail.com', 'mfatihas', 'mfatihas', 'http://localhost/CodeRealm/assets/image/logo.svg', '2017-12-17 14:02:33');
 
 --
 -- Indexes for dumped tables
@@ -223,6 +248,14 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email` (`email`),
   ADD UNIQUE KEY `photo_url` (`photo_url`),
   ADD KEY `id_role` (`id_role`);
+
+--
+-- Indexes for table `enroll_skills`
+--
+ALTER TABLE `enroll_skills`
+  ADD PRIMARY KEY (`id_enroll_skills`),
+  ADD KEY `id_skill` (`id_skill`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `lecture`
@@ -282,6 +315,11 @@ ALTER TABLE `user`
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `enroll_skills`
+--
+ALTER TABLE `enroll_skills`
+  MODIFY `id_enroll_skills` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `lecture`
 --
 ALTER TABLE `lecture`
@@ -310,7 +348,7 @@ ALTER TABLE `skill_path`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -320,6 +358,13 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `enroll_skills`
+--
+ALTER TABLE `enroll_skills`
+  ADD CONSTRAINT `enroll_skills_ibfk_1` FOREIGN KEY (`id_skill`) REFERENCES `skills` (`id_skill`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `enroll_skills_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `lecture`

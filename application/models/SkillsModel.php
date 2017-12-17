@@ -26,6 +26,10 @@ class SkillsModel extends CI_Model {
         return $this->db->get_where('skill_course', array('id_skill_course'=>$id_skill_course));
     }
 
+    function getEnrollStatus($id_user, $id_skill) {
+        return $this->db->get_where('enroll_skills', array('id_skill'=>$id_skill ,'id_user'=>$id_user));
+    }
+
     function getNumOfCourse() {
         $select = array(
             'skills.id_skill',
@@ -99,9 +103,11 @@ class SkillsModel extends CI_Model {
         }
 
         $data_skill = array(
+            'idSkill' => $skill['id_skill'],
             'name' => $skill['skill_name'],
             'description' => $skill['description'],
             'enrollUrl' => $skill['enroll_url'],
+            'skillFile' => $skill['skill_file'],
             'skillBadge' => $skill['skill_badge'],
             'numOfCourse' => $numOfCourse[$skill['id_skill']],
             'path' => $data_path
