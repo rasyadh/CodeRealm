@@ -1,0 +1,30 @@
+[
+    {
+        "title": "HTML - CSS",
+        "description": "Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.",
+        "badgeUrl": "assets/image/Badge/badge-html-css.svg",
+        "enrollUrl": "/quest",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "Getting Started With HTML and CSS",
+                "descriptionCourse": "HTML and CSS are the languages you can use to build and style websites. In these courses, you’ll learn the basics of HTML and CSS, build your first website, and then review some of the current HTML5 and CSS3 best practices.",
+                "course": [
+                    {
+                        "courseBadge": "assets/image/Course/HTML-CSS/frontend-foundation.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Front-end Foundations",
+                        "courseDescription": "Learn how to build a website with HTML and CSS."
+                    },
+                    {
+                        "courseBadge": "assets/image/Course/HTML-CSS/frontend-formation.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Front-end Formations",
+                        "courseDescription": "Learn the latest versions of HTML and CSS."
+                    }
+                ]
+            }
+        ]
+    }
+]

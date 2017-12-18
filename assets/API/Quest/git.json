@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Git",
+        "description": "Build a solid foundation in Git, then pair it with advanced version control skills. Learn how to collaborate on projects effectively with GitHub.",
+        "badgeUrl": "assets/image/Badge/badge-git.svg",
+        "enrollUrl": "/quest",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "Git",
+                "descriptionCourse": "Git is the most popular version control system that developers use to track and share code. These courses will take you from a complete beginner to proficiency using Git and GitHub.",
+                "course": [
+                    {
+                        "courseBadge": "assets/image/Course/Git/try-git.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Try Git",
+                        "courseDescription": "Be introduced to the basic concepts of Git version control."
+                    },
+                    {
+                        "courseBadge": "assets/image/Course/Git/git-real.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Git Real",
+                        "courseDescription": "Get a more advanced introduction and guide to Git."
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Python",
+        "description": "Explore what it means to store and manipulate data, make decisions with your program, and leverage the power of Python.",
+        "badgeUrl": "assets/image/Badge/badge-python.svg",
+        "enrollUrl": "/quest",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "Getting Started With Python",
+                "descriptionCourse": "Python is a fast and powerful language that is also easy to use and read, making it great for beginners and experts alike. These courses will take you through the basics of Python, helping you scale up your knowledge and preparing you to build a wide variety of Python applications.",
+                "course": [
+                    {
+                        "courseBadge": "assets/image/Course/Python/try-python.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Try Python",
+                        "courseDescription": "Begin scaling up your Python knowledge and open the door to plentiful programming possibilities."
+                    },
+                    {
+                        "courseBadge": "assets/image/Course/Python/flying-through-python.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Flying Through Python",
+                        "courseDescription": "Continue learning the basics of Python and use them to manage our circus' Spam Van food truck."
+                    }
+                ]
+            }
+        ]
+    }
+]

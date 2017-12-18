@@ -1,0 +1,30 @@
+[
+    {
+        "title": "JavaScript",
+        "description": "Spend some time with this powerful scripting language and learn to build lightweight applications with enhanced user interfaces.",
+        "badgeUrl": "assets/image/Badge/badge-javascript.svg",
+        "enrollUrl": "/quest",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "JavaScript Language",
+                "descriptionCourse": "JavaScript is a powerful and popular language for programming on the web. These courses will give you a strong foundation in the JavaScript language so you’ll be ready to move up to frameworks like Angular and Node.js.",
+                "course": [
+                    {
+                        "courseBadge": "assets/image/Course/Javascript/javascript-01.png",
+                        "courseUrl": "/quest",
+                        "courseName": "JavaScript Road Trip Part 1",
+                        "courseDescription": "An introduction to the very basics of the JavaScript language."
+                    },
+                    {
+                        "courseBadge": "assets/image/Course/Javascript/javascript-02.png",
+                        "courseUrl": "/quest",
+                        "courseName": "JavaScript Road Trip Part 2",
+                        "courseDescription": "A continued introduction to the very basics of the JavaScript language."
+                    }
+                ]
+            }
+        ]
+    }
+]
