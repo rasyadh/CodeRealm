@@ -3,7 +3,11 @@
 class QuestModel extends CI_Model {
 
     function getQuest($id_quest) {
-        return $this->db->get_where('quest', array('id_quest'=>$id_quest));
+        return $this->db->get_where('course', array('id'=>$id_quest));
+    }
+
+    function getQuestPath($id_quest) {
+        return $this->db->get_where('course_detail', array('id'=>$id_quest));
     }
 
     function getLectureQuest($id_lecture) {
@@ -11,11 +15,11 @@ class QuestModel extends CI_Model {
     }
 
     function getAllQuest() {
-        return $this->db->get('quest');
+        return $this->db->get('course');
     }
 
-    function getAllCourse($id_skill_path) {
-        return $this->db->get_where('skill_course', array('id_skill_path'=>$id_skill_path));
+    function getAllCourse($id_quest_path) {
+        return $this->db->get_where('course_detail', array('id_course'=>$id_quest_path));
     }
 
     function getCourse($id_skill_course) {

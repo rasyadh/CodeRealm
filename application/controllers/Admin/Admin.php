@@ -52,7 +52,8 @@ class Admin extends CI_Controller {
 
                 if ($result != FALSE) {
                     $session_data = array(
-                        'email' => $result['email']
+                        'email' => $result['email'],
+                        'id' => $result['id_admin']
                     );
                     
                     $this->session->set_userdata('admin_signed_in', $session_data);

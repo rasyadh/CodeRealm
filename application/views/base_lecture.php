@@ -29,6 +29,13 @@ else {
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/semantic.min.css"); ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/jquery.dataTables.min.css"); ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/lecture.css"); ?>">
+    <script src="<?= base_url("assets/js/jquery.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/semantic.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/jquery.dataTables.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/dataTables.semanticui.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/Chart.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/moment.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/lecture.js"); ?>"></script>
 </head>
 
 <body>
@@ -38,14 +45,5 @@ else {
         <?= $body; ?>
 
     </div>
-
-    <script src="<?= base_url("assets/js/jquery.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/semantic.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/jquery.dataTables.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/dataTables.semanticui.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/Chart.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/moment.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/lecture.js"); ?>"></script>
 </body>
-
 </html>
