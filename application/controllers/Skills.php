@@ -52,7 +52,12 @@ class Skills extends CI_Controller {
 			$this->db->update('enroll_skills', $enroll_data);
 		}
 		else {
+			$data = array(
+				'id_badge' => $id_skill,
+				'id_user' => $id_user
+			);
 			$this->db->insert('enroll_skills', $enroll_data);
+			$this->db->insert('badgenuser', $data);
 		}
 		$result = $this->skillsmodel->getSkill($id_skill)->row_array();
 

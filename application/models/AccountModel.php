@@ -26,4 +26,21 @@ class AccountModel extends CI_Model {
 
         return json_encode($data);
     }
+
+    function getBadges($id_user) {
+        $result = $this->db->get_where('badgenuser', array('id_user'=>$id_user))->result();
+        $data = array();
+        foreach ($result as $r) {
+            $badges = $this->db->get_where('badge', array('id'=>$r->id_badge))->result();
+            $row = array(
+                'id_badge' => $r->id_badge,
+                'img' => $badges[0]->img,
+                'nama_badge' => $badges[0]->nama_badge
+            );
+            array_push($data, $row);
+            $row = array();
+        }
+        
+        return json_encode($data);
+    }
 }

@@ -73,6 +73,7 @@
 
             </div>
             <div class="wide column"></div>
+
             <div class="five wide column">
                 <!-- Recent Badges -->
                 <div class="ui container">
@@ -82,13 +83,12 @@
                                 <h3>Recent Badges</h3>
                             </div>
                         </div>
+
                         <div class="extra content">
-                            <br />
                             <div class="ui tiny circular images">
-                                <img class="ui circular image" src="<?= base_url('assets/image/Course/Javascript/javascript-01.png'); ?>" alt="Course" />
-                                <img class="ui circular image" src="<?= base_url('assets/image/Course/Javascript/javascript-01.png'); ?>" alt="Course" />
-                                <img class="ui circular image" src="<?= base_url('assets/image/Course/Javascript/javascript-01.png'); ?>" alt="Course" />
-                                <img class="ui circular image" src="<?= base_url('assets/image/Course/Javascript/javascript-01.png'); ?>" alt="Course" />
+                                <?php foreach ($badges as $b) { ?>
+                                    <img class="ui circular image" src="<?= $b->img; ?>" alt="Badges" />
+                                <?php } ?>
                             </div>
                             <br />
                             <div class="ui center aligned container">
@@ -100,24 +100,6 @@
                 </div>
                 <br/>
 
-                <!-- Completed Course -->
-                <div class="ui container">
-                    <div class="ui card">
-                        <div class="content">
-                            <div class="header">
-                                <h3>Completed Course</h3>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="meta">Ruby Course</div>
-                            <div class="header">Ruby Bits</div>
-                        </div>
-                        <div class="extra content">
-                            <div class="meta">Ruby Course</div>
-                            <div class="header">Ruby Bits</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
