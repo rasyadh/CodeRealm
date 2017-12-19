@@ -12,7 +12,11 @@ class Enroll extends CI_Controller {
 	public function index() {
         $data['title'] = "Enroll User";
 
-        $data['users'] = $this->lecturemodel->getAllCourseUser()->result();
+        if($this->lecturemodel->getAllCourseUser()){
+            $data['users'] = $this->lecturemodel->getAllCourseUser()->result();
+        }else{
+            $data['users'] = [];
+        }
 
 		$this->template->load('base_lecture', 'lecture/enroll/enroll', $data);
     }

@@ -21,6 +21,7 @@
             <div class="content">
                 <div class="header">PvP Not Available</div>
                 <div class="description">Game Master is still creating this feature.</div>
+                <div class="meta">For more question please ask to prasetyo.akise@gmail.com</div>
             </div>
 
         </div>
