@@ -16,5 +16,13 @@
             <a class="active item" href="<?= site_url('pvp'); ?>"><i class="game icon"></i>PvP</a>
         </div>
         <br>
+        <div class="ui fluid card">
+
+            <div class="content">
+                <div class="header">PvP Not Available</div>
+                <div class="description">Game Master is still creating this feature.</div>
+            </div>
+
+        </div>
     </div>
 </main>

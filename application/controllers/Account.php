@@ -13,6 +13,10 @@ class Account extends CI_Controller {
         if (isset($this->session->userdata['user_signed_in'])) {
             $data['title'] = "Account";
             
+            $email = $this->session->userdata['user_signed_in']['email'];
+            $user = $this->usersmodel->getUser($email)->row_array();
+            $data['enroll_skill'] = json_decode($this->accountmodel->getKeepPlayingSkills($user['id_user']));
+
             $this->template->load('base', 'account/index', $data);
         }
         else {
