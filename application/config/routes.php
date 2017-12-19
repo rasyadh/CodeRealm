@@ -115,6 +115,7 @@ $route['lecture/signout'] = 'Lecture/lecture/signout';
 $route['lecture/dashboard'] = 'Lecture/lecture/dashboard';
 $route['lecture/quest'] = 'Lecture/quest/index';
 $route['lecture/enroll'] = 'Lecture/enroll/index';
+$route['lecture/enroll/delete/(:any)'] = 'Lecture/enroll/delete';
 $route['lecture/account'] = 'Lecture/lecture/account';
 $route['lecture/quest/path/(:any)'] = 'Lecture/quest/path';
 $route['lecture/quest/delete/(:any)'] = 'Lecture/quest/delete_quest';
