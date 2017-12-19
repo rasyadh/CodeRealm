@@ -29,12 +29,32 @@ $(document).ready(function () {
 });
 
 var content = [
-    { title: 'HTML/CSS' },
-    { title: 'JavaScript' },
-    { title: 'Ruby' },
-    { title: 'PHP' },
-    { title: 'Python' },
-    { title: 'Git' },
-    { title: 'Database' },
-    { title: 'Android' },
+    {
+        title: 'HTML-CSS',
+        url: 'http://localhost/CodeRealm/skills/html-css'
+    },
+    {
+        title: 'JavaScript',
+        url: 'http://localhost/CodeRealm/skills/javascript'
+    },
+    {
+        title: 'Ruby',
+        url: 'http://localhost/CodeRealm/skills/ruby'
+    },
+    {
+        title: 'PHP',
+        url: 'http://localhost/CodeRealm/skills/php'
+    },
+    {
+        title: 'Python',
+        url: 'http://localhost/CodeRealm/skills/python'
+    },
+    {
+        title: 'Git',
+        url: 'http://localhost/CodeRealm/skills/git'
+    },
+    {
+        title: 'Database',
+        url: 'http://localhost/CodeRealm/skills/database'
+    }
 ];

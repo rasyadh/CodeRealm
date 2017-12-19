@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Ruby",
+        "description": "Master your Ruby skills and increase your Rails street cred by learning to build dynamic, sustainable applications for the web.",
+        "badgeUrl": "assets/image/Badge/badge-ruby.svg",
+        "enrollUrl": "/quest",
+        "completedCourses": "0",
+        "numOfCourses": "2",
+        "courses": [
+            {
+                "titleCourse": "Ruby Language",
+                "descriptionCourse": "Once you understand the basics of Ruby, learning more about the language will help you write better Ruby code and, therefore, better software. These courses give an overview of some of the most important parts of the Ruby programming language.",
+                "course": [
+                    {
+                        "courseBadge": "assets/image/Course/Ruby/ruby-bits.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Ruby Bits",
+                        "courseDescription": "Learn the core bits every Ruby programmer should know."
+                    },
+                    {
+                        "courseBadge": "assets/image/Course/Ruby/ruby-bits-2.png",
+                        "courseUrl": "/quest",
+                        "courseName": "Ruby Bits Part 2",
+                        "courseDescription": "Learn the advanced bits of expert Ruby programming."
+                    }
+                ]
+            }
+        ]
+    }
+]

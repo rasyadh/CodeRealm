@@ -9,7 +9,21 @@
         <div className="ui text container">
             <h2>My Badges</h2>
             <div className="ui segment">
-                
+                <!-- Recent Badges -->
+                <div class="ui center aligned container">
+                    <div class="ui three stackable centered cards">
+                        <?php foreach ($badges as $b) { ?>
+                        <div class="raised card">
+                            <div class="image" style="background: #fff;">
+                                <img class="ui circular image" src="<?= $b->img; ?>" alt="Badges" />
+                            </div>
+                            <div class="content">
+                                <div class="header"><?= $b->nama_badge; ?></div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
