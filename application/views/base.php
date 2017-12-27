@@ -26,6 +26,9 @@ if (isset($this->session->userdata['user_signed_in'])) {
     <title><?= $title ?> | CodeRealm</title>
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/semantic.min.css"); ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/app.css"); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url("assets/css/anim.css"); ?>">
+    <script src="<?= base_url("assets/js/jquery.min.js"); ?>"></script>
+    <script src="<?= base_url("assets/js/semantic.min.js"); ?>"></script>
 </head>
 
 <body>
@@ -40,8 +43,6 @@ if (isset($this->session->userdata['user_signed_in'])) {
         <?php include 'partials/footer.php'; ?>
     </div>
 
-    <script src="<?= base_url("assets/js/jquery.min.js"); ?>"></script>
-    <script src="<?= base_url("assets/js/semantic.min.js"); ?>"></script>
     <script src="<?= base_url("assets/js/app.js"); ?>"></script>
     <script src="<?= base_url("assets/js/form-validation.js"); ?>"></script>
 </body>

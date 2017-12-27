@@ -75,6 +75,7 @@ $route['quest/(:any)'] = 'quest/content';
 
 // PvP
 $route['pvp'] = 'pvp/index';
+$route['pvp/challenge/(:any)'] = 'pvp/challenge';
 
 // Account
 $route['account'] = 'account/index';

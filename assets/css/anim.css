@@ -1,0 +1,92 @@
+.Asuna {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/asuna_stand.png);
+}
+
+.Kirino {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/kirino_stand.png);
+}
+
+.Taiga {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/taiga_stand.png);
+}
+
+.Shana {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/shana_stand.png);
+}
+
+.Yuuki {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/yuuki_stand.png);
+}
+
+.Kuro {
+  height: 400px;
+  width: 400px;
+  display: inline-block;
+  background-image: url(../image/Anim/kuroneko_stand.png);
+}
+
+.Asuna-1 {
+  animation: key-step 1s infinite steps(8);
+}
+
+.Kirino-1 {
+  animation: key-step 1s infinite steps(8);
+}
+
+.Taiga-1 {
+  animation: key-step 1s infinite steps(8);
+}
+
+.Shana-1 {
+  animation: key-step1 1s infinite steps(7);
+}
+
+.Yuuki-1 {
+  animation: key-step1 1s infinite steps(7);
+}
+
+.Kuro-1 {
+  animation: key-step1 1s infinite steps(7);
+}
+
+@keyframes key-step {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -3200px;
+  }
+}
+
+@keyframes key-step1 {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -2800px;
+  }
+}
+
+@keyframes key-step2 {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -2000px;
+  }
+}

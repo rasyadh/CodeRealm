@@ -43,6 +43,7 @@ class Users extends CI_Controller {
 
                 if ($result != FALSE) {
                     $session_data = array(
+                        'id' => $result['id_user'],
                         'email' => $result['email'],
                         'photo_url' => $result['photo_url']
                     );
