@@ -57,6 +57,10 @@
                 <?= form_textarea('description', '', array('placeholder'=>'Description', 'required'=>'')); ?>
             </div>
             <div class="required field">
+                <label>Enroll URL</label>
+                <?= form_input('enroll_url', '', array('placeholder'=>'Enroll Url', 'required'=>'')); ?>
+            </div>
+            <div class="required field">
                 <label>Image URL</label>
                 <?= form_input('url', '', array('placeholder'=>'Image URL', 'required'=>'')); ?>
             </div>

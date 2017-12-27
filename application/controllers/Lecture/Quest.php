@@ -10,8 +10,11 @@ class Quest extends CI_Controller {
     }
 
 	public function index() {
+        if (isset($this->session->userdata['lecture_signed_in'])) {
+            $id = $this->session->userdata['lecture_signed_in']['id'];
+        }
         $data['title'] = "Quest Course";
-        $data['data_quest'] = $this->questmodel->getAllQuest()->result();
+        $data['data_quest'] = $this->questmodel->getLectureQuest($id)->result();
 
 		$this->template->load('base_lecture', 'lecture/quest/quest', $data);
     }
@@ -39,6 +42,7 @@ class Quest extends CI_Controller {
             $data_quest['img'] = $this->input->post('url');
             $data_quest['status'] = $this->input->post('status');
             $data_quest['id_lecture']  = $this->session->userdata['lecture_signed_in']['id'];
+            $data_quest['enroll_url'] = $this->input->post('enroll_url');
 
             $this->db->insert('course', $data_quest);
 
@@ -65,8 +69,6 @@ class Quest extends CI_Controller {
         $data['title'] = "Edit Quest";
         $data['quest'] = $this->questmodel->getQuest($id_quest)->row_array();
         $data['status'] = $data['quest']['status'];
-
-     
 
         $this->template->load('base_lecture', 'lecture/quest/edit_quest', $data);
     }

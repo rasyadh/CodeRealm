@@ -33,4 +33,5 @@ class LectureModel extends CI_Model {
     function delete($id){
         $this->db->delete('enroll_course', array('id' => $id));
     }
+
 }

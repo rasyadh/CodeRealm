@@ -54,7 +54,6 @@ class Lecture extends CI_Controller {
                     $session_data = array(
                         'email' => $result['email'],
                         'id' => $result['id_lecture']
-
                     );
                     
                     $this->session->set_userdata('lecture_signed_in', $session_data);

@@ -18,21 +18,23 @@
         <br>
         <div class="ui four stackable link centered cards">
 
-            <?php foreach ($skill_path as $skill){ ?>
-                <div class="raised card">
-                    <a class="image" href="<?= '#skills/'.strtolower($skill->name); ?>">
-                        <img src="<?= base_url($skill->imgUrl); ?>">
-                    </a>
-                    <div class="content">
-                        <a class="header" href="<?= '#skills/'.strtolower($skill->name); ?>"><?= $skill->name; ?></a>
-                        <div class="meta">
-                            <a><?= $skill->numOfCourse; ?> Courses</a>
-                        </div>
-                        <div class="description">
-                            <?= $skill->description; ?>
+            <?php foreach ($quests as $quest){ ?>
+                <?php if ($quest->status == True) { ?>
+                    <div class="raised card">
+                        <a class="image" href="<?= $quest->enrollUrl; ?>">
+                            <img src="<?= $quest->img; ?>">
+                        </a>
+                        <div class="content">
+                            <a class="header" href="<?= $quest->enrollUrl; ?>"><?= $quest->name; ?></a>
+                            <div class="meta">
+                                <a><?= $quest->numOfCourse; ?> Courses</a>
+                            </div>
+                            <div class="description">
+                                <?= $quest->description; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             <?php } ?>
 
         </div>

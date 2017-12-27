@@ -6,60 +6,58 @@ class QuestModel extends CI_Model {
         return $this->db->get_where('course', array('id'=>$id_quest));
     }
 
-    function getQuestPath($id_quest) {
-        return $this->db->get_where('course_detail', array('id'=>$id_quest));
-    }
-
     function getLectureQuest($id_lecture) {
-        return $this->db->get_where('quest', array('id_lecture'=>$id_lecture));
+        return $this->db->get_where('course', array('id_lecture'=>$id_lecture));
     }
 
     function getAllQuest() {
         return $this->db->get('course');
     }
 
+    function getQuestPath($id_quest) {
+        return $this->db->get_where('course_detail', array('id'=>$id_quest));
+    }
+
     function getAllCourse($id_quest_path) {
         return $this->db->get_where('course_detail', array('id_course'=>$id_quest_path));
     }
 
-    function getCourse($id_skill_course) {
-        return $this->db->get_where('skill_course', array('id_skill_course'=>$id_skill_course));
-    }
-
     function getNumOfCourse() {
         $select = array(
-            'skills.id_skill',
-            'count(skill_course.id_skill_course) as NumOfCourse'
+            'course.id',
+            'count(course_detail.id_course) as NumOfCourse'
         );
         $result = $this->db
                         ->select($select)
-                        ->from('skills, skill_path, skill_course')
-                        ->where('skills.id_skill = skill_path.id_skill and skill_path.id_skill_path = skill_course.id_skill_path')
-                        ->group_by('skills.id_skill')
+                        ->from('course, course_detail')
+                        ->where('course.id = course_detail.id_course')
+                        ->group_by('course.id')
                         ->get()
                         ->result_array();
 
         $numOfCourse = array();
         foreach ($result as $num) {
-            $numOfCourse[$num['id_skill']] = $num['NumOfCourse'];
+            $numOfCourse[$num['id']] = $num['NumOfCourse'];
         }
 
         return $numOfCourse;
     }
 
     function getMainPage() {
-        $skills =  $this->getAllSkill()->result();
+        $quests =  $this->getAllQuest()->result();
         $numOfCourse = $this->getNumOfCourse();
 
         $data = array();
-        foreach ($skills as $skill) {
+        foreach ($quests as $quest) {
             $row = array(
-                'id' => $skill->id_skill,
-                'name' => $skill->skill_name,
-                'numOfCourse' => $numOfCourse[$skill->id_skill],
-                'description' => $skill->description,
-                'enrollUrl' => $skill->enroll_url,
-                'skillBadge' => $skill->skill_badge
+                'id' => $quest->id,
+                'name' => $quest->nama_course,
+                'lecture' => $quest->id_lecture,
+                'numOfCourse' => $numOfCourse[$quest->id],
+                'description' => $quest->keterangan,
+                'status' => $quest->status,
+                'enrollUrl' => $quest->enroll_url,
+                'img' => $quest->img
             );
             array_push($data, $row);
             $row = array();
@@ -68,45 +66,38 @@ class QuestModel extends CI_Model {
         return json_encode($data);
     }
 
-    function getSkillContent($url) {
-        $skill = $this->db->get_where('skills', array('enroll_url'=>$url))->row_array();
+    function getQuestContent($url) {
+        $quest = $this->db->get_where('course', array('enroll_url'=>$url))->row_array();
         $numOfCourse = $this->getNumOfCourse();
-        $path = $this->db->get_where('skill_path', array('id_skill'=>$skill['id_skill']))->result();
-        $course = $this->db->get_where('skill_course', array('id_skill_path'=>$path[0]->id_skill_path))->result();
+        $course = $this->db->get_where('course_detail', array('id_course'=>$quest['id']))->result();
+
+        $lecture = $this->db->get_where('lecture', array('id_lecture'=>$quest['id_lecture']))->row_array();
 
         $data = array();
         $data_course = array();
-        $data_path = array();
-        foreach ($path as $p) {
-            foreach ($course as $c) {
-                $row = array(
-                    'courseName' => $c->name_course,
-                    'description' => $c->description,
-                    'courseUrl' => $c->skill_course_url,
-                    'courseBadge' => $c->skill_course_badge
-                );
-                array_push($data_course, $row);
-                $row = array();
-            }
-            $rowp = array(
-                'titlePath' => $p->title_path,
-                'description' => $p->description,
-                'courses' => $data_course
+        foreach ($course as $c) {
+            $row = array(
+                'nameCourse' => $c->nama_detail,
+                'description' => $c->keterangan,
+                'img' => $c->img,
+                'point' => $c->point,
+                'status' => $c->status
             );
-            array_push($data_path, $rowp);
-            $rowp = array();
-            $data_course = array();
+            array_push($data_course, $row);
+            $row = array();
         }
 
-        $data_skill = array(
-            'name' => $skill['skill_name'],
-            'description' => $skill['description'],
-            'enrollUrl' => $skill['enroll_url'],
-            'skillBadge' => $skill['skill_badge'],
-            'numOfCourse' => $numOfCourse[$skill['id_skill']],
-            'path' => $data_path
+        $data_quest = array(
+            'name' => $quest['nama_course'],
+            'description' => $quest['keterangan'],
+            'enrollUrl' => $quest['enroll_url'],
+            'img' => $quest['img'],
+            'numOfCourse' => $numOfCourse[$quest['id']],
+            'lecture' => $lecture['name'],
+            'lecturePhoto' => $lecture['photo_url'],
+            'courses' => $data_course
         );
-        array_push($data, $data_skill);
+        array_push($data, $data_quest);
 
         return json_encode($data);
     }
