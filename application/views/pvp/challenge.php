@@ -49,7 +49,7 @@
                                 <p><?= $statgw->def ?></p>
                             </div>
                             <div class="eight wide column">
-                                <p><?= $statmusuh->def ?>;</p>
+                                <p><?= $statmusuh->def ?></p>
                             </div>
                         </div>
                         <br/>

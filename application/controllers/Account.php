@@ -16,6 +16,7 @@ class Account extends CI_Controller {
             $email = $this->session->userdata['user_signed_in']['email'];
             $user = $this->usersmodel->getUser($email)->row_array();
             $data['enroll_skill'] = json_decode($this->accountmodel->getKeepPlayingSkills($user['id_user']));
+            $data['enroll_course'] = json_decode($this->accountmodel->getKeepPlayingQuest($user['id_user']));
             $data['badges'] = json_decode($this->accountmodel->getBadges($user['id_user']));
 
             $this->template->load('base', 'account/index', $data);

@@ -32,6 +32,7 @@ class Pvp extends CI_Controller {
 	}
 
 	public function challenge(){
+		$data['title'] = "PvP";
 		$id_musuh = $id_skill = $this->uri->segment(3);
 
 		if (isset($this->session->userdata['user_signed_in'])) {

@@ -15,7 +15,18 @@ class Lecture extends CI_Controller {
     }
 
     public function dashboard() {
+        $this->load->model('questmodel');
+        if (isset($this->session->userdata['lecture_signed_in'])) {
+            $id = $this->session->userdata['lecture_signed_in']['id'];
+        }
         $data['title'] = "Dashboard";
+
+        $quest = $this->questmodel->getLectureQuest($id)->result();
+        $i = 0;
+        foreach($quest as $q) {
+            $i++;
+        }
+        $data['numQuest'] = $i;
         
         $this->template->load('base_lecture', 'lecture/dashboard', $data);
     }

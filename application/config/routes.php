@@ -72,6 +72,7 @@ $route['skills/(:any)'] = 'skills/content';
 // Quest
 $route['quest'] = 'quest/index';
 $route['quest/(:any)'] = 'quest/content';
+$route['quest/(:any)/upload'] = 'quest/upload';
 
 // PvP
 $route['pvp'] = 'pvp/index';

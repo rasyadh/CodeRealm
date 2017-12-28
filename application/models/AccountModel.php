@@ -27,6 +27,27 @@ class AccountModel extends CI_Model {
         return json_encode($data);
     }
 
+    function getKeepPlayingQuest($id_user) {
+        $enroll = $this->db->get_where('enroll_course', array('id_user'=>$id_user))->result();
+
+        $data = array();
+        foreach ($enroll as $e) {
+            $course = $this->db->get_where('course', array('id'=>$e->id_course))->result();
+            $row = array(
+                'id_user' => $e->id_user,
+                'id_course' => $e->id_course,
+                'enroll_status' => $e->enroll_status,
+                'name' => $course[0]->nama_course,
+                'img' => $course[0]->img,
+                'enroll_url' => $course[0]->enroll_url
+            );
+            array_push($data, $row);
+            $row = array();
+        }
+
+        return json_encode($data);
+    }
+
     function getBadges($id_user) {
         $result = $this->db->get_where('badgenuser', array('id_user'=>$id_user))->result();
         $data = array();

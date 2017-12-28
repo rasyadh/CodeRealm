@@ -4,11 +4,7 @@
         <h1 class="ui inverted header"><?= $content[0]->name; ?></h1>
         <p class="ui inverted header"><?= $content[0]->description; ?></p>
         <?php if (isset($this->session->userdata['user_signed_in'])) { ?>            
-            <?php if ($enroll['enroll_status']) { ?>
-                <a class="ui large black button" href="<?= site_url('quest/unenroll/'.$enroll['id'].'/'.$user['id_course'].'/'.$enroll['enroll_status']); ?>">Enrolled</a>    
-            <?php } else { ?>
-                <a class="ui large black button" href="<?= site_url('quest/enroll/'.$user['id_user'].'/'.$user['id_course']); ?>">Enroll Now</a>    
-            <?php } ?>
+            <a class="ui large black button" href="<?= site_url('signin'); ?>">Enroll Now</a>    
         <?php } else { ?>
             <a class="ui large black button" href="<?= site_url('signin'); ?>">Enroll Now</a>    
         <?php } ?>
@@ -22,35 +18,21 @@
             <div class="ten wide column">
                 <div class="ui container">
                     <?php foreach ($content[0]->courses as $quest) { ?>
-                        <div class="ui segments">
-                            <div class="ui segment">
-                                <div class="ui stackable middle aligned grid">
-                                    <div class="three wide column">
-                                        <a href="<?= $quest->img; ?>">
-                                            <img class="ui small circular image" src="<?= $quest->img; ?>" alt="<?= $quest->nameCourse; ?>" />
-                                        </a>
-                                    </div>
-                                    <div class="ten wide column">
-                                        <a href="#"><h2><?= $quest->nameCourse; ?></h2></a>
-                                        <p><?= $quest->description; ?></p>
-                                        <p>Point : <?= $quest->point; ?></p>
-                                    </div>
-                                    <div class="three wide column">
-                                        <div class="ui small label">Not Complete</div>
-                                    </div>
+                        <div class="ui segment">
+                            <div class="ui stackable middle aligned grid">
+                                <div class="three wide column">
+                                    <a href="<?= $quest->img; ?>">
+                                        <img class="ui small circular image" src="<?= $quest->img; ?>" alt="<?= $quest->nameCourse; ?>" />
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="ui segment">
-                                <h3>Materi : <span><a href="<?= $quest->file; ?>"><?= $quest->nameCourse ?></a></span></h3>
-                                <?= form_open_multipart('quest/'.$quest->nameCourse.'/upload/', 'class="ui form"'); ?>
-                                    <?= form_hidden('url', current_url()); ?>
-                                    <div class="field">
-                                        <?= form_upload('file', ''); ?>
-                                    </div>
-                                    <div class="field">
-                                        <?= form_submit('upload_file', 'Upload File', 'class="ui fluid primary button"'); ?>
-                                    </div>
-                                <?= form_close(); ?>
+                                <div class="ten wide column">
+                                    <a href="#"><h2><?= $quest->nameCourse; ?></h2></a>
+                                    <p><?= $quest->description; ?></p>
+                                    <p>Point : <?= $quest->point; ?></p>
+                                </div>
+                                <div class="three wide column">
+                                    <div class="ui small label">Not Complete</div>
+                                </div>
                             </div>
                         </div>
                         <br />

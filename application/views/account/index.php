@@ -27,9 +27,6 @@
                                         <h3><?= $skill->skill_name; ?></h3>
                                     </div>
                                     <br />
-                                    <div class="ui tiny blue progress">
-                                        <div class="bar"></div>
-                                    </div>
                                 </div>
                                 <div class="wide column"></div>
                                 <div class="three wide column">
@@ -42,33 +39,37 @@
                     } ?>
 
                 </div>
-
-                <!-- Keep Playing Course -->
+                
+                <!-- Keep Playing Quest -->
                 <div class="ui container" id="content-account">
-                    <h2>Keep Playing Course</h2>
+                    <h2>Keep Playing Quest</h2>
                     <br />
-                    <div class="ui stackable middle aligned grid">
-                        <div class="four wide column">
-                            <a href="<?= site_url('account'); ?>">
-                                <img class="ui circular image" src="<?= base_url('assets/image/Course/Javascript/javascript-01.png') ?>" alt="Course" />
-                            </a>
-                        </div>
-                        <div class="eight wide column">
-                            <a href="<?= site_url('account'); ?>">
-                                <h3>JavaScript Road Trip Part 1</h3>
-                            </a>
-                            <br />
-                            <div class="ui tiny blue progress">
-                                <div class="bar"></div>
-                            </div>
-                        </div>
-                        <div class="wide column"></div>
-                        <div class="three wide column">
+                    <?php foreach($enroll_course as $course) { 
+                        if ($course->enroll_status == TRUE) { ?>
                             <div class="ui stackable middle aligned grid">
-                                <button class="ui fluid primary button">Resume</button>
+                                <div class="four wide column">
+                                    <div>
+                                        <img class="ui circular image" src="<?= $course->img ?>" alt="Queset Course" />
+                                    </div>
+                                </div>
+                                <div class="eight wide column">
+                                    <div>
+                                        <h3><?= $course->name; ?></h3>
+                                    </div>
+                                    <br />
+                                    <div class="ui tiny blue progress">
+                                        <div class="bar"></div>
+                                    </div>
+                                </div>
+                                <div class="wide column"></div>
+                                <div class="three wide column">
+                                    <div class="ui stackable middle aligned grid">
+                                        <a href="<?= $course->enroll_url; ?>" class="ui fluid primary button">Resume</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        <?php } 
+                    } ?>
                 </div>
 
             </div>

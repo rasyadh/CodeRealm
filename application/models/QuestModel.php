@@ -22,6 +22,10 @@ class QuestModel extends CI_Model {
         return $this->db->get_where('course_detail', array('id_course'=>$id_quest_path));
     }
 
+    function getEnrollStatus($id_user, $id_course) {
+        return $this->db->get_where('enroll_course', array('id_course' => $id_course, 'id_user' => $id_user));
+    }
+
     function getNumOfCourse() {
         $select = array(
             'course.id',
@@ -77,17 +81,20 @@ class QuestModel extends CI_Model {
         $data_course = array();
         foreach ($course as $c) {
             $row = array(
+                'idCourse' => $c->id,
                 'nameCourse' => $c->nama_detail,
                 'description' => $c->keterangan,
                 'img' => $c->img,
                 'point' => $c->point,
-                'status' => $c->status
+                'status' => $c->status,
+                'file' => $c->file
             );
             array_push($data_course, $row);
             $row = array();
         }
 
         $data_quest = array(
+            'id' => $quest['id'],
             'name' => $quest['nama_course'],
             'description' => $quest['keterangan'],
             'enrollUrl' => $quest['enroll_url'],

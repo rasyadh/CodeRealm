@@ -21,4 +21,45 @@ class AdminModel extends CI_Model {
     function getAllLecture() {
         return $this->db->get('lecture');
     }
+
+    function getDashboard() {
+        $select = array(
+            'count(user.id_user) as numUser'
+        );
+        $user = $this->db
+                        ->select($select)
+                        ->from('user')
+                        ->get()
+                        ->row_array();
+
+        $select = array(
+            'count(skills.id_skill) as numSkill'
+        );
+        $skill = $this->db
+                        ->select($select)
+                        ->from('skills')
+                        ->get()
+                        ->row_array();
+
+        $select = array(
+            'count(course.id) as numQuest'
+        );
+        $quest = $this->db
+                        ->select($select)
+                        ->from('course')
+                        ->get()
+                        ->row_array();
+
+        $select = array(
+            'count(lecture.id_lecture) as numLecture'
+        );
+        $lecture = $this->db
+                        ->select($select)
+                        ->from('lecture')
+                        ->get()
+                        ->row_array();
+
+        $result = [$user, $skill, $quest, $lecture];
+        return $result;
+    }
 }

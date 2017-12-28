@@ -16,7 +16,7 @@
             <a class="item" href="<?= site_url('pvp'); ?>"><i class="game icon"></i>PvP</a>
         </div>
         <br>
-        <div class="ui three stackable centered cards">
+        <div class="ui three stackable link centered cards">
 
             <?php foreach ($skills as $skill) { ?>
                 <div class="raised card">
