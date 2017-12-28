@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2017 at 11:43 AM
+-- Generation Time: Dec 28, 2017 at 07:56 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -113,7 +113,8 @@ CREATE TABLE `course` (
 
 INSERT INTO `course` (`id`, `id_lecture`, `nama_course`, `keterangan`, `img`, `status`, `enroll_url`) VALUES
 (1, 1, 'Teknologi Web', 'Teknologi Web', 'https://4.bp.blogspot.com/-mhgMLE82f0Q/WBqemZLyVjI/AAAAAAAACIU/Njp2fUIYFSM1PDBcSE3NmU7sCbRCTaeswCLcB/s1600/a.JPG', 1, 'http://localhost/CodeRealm/quest/teknologi-web'),
-(2, 2, 'Data Mining', 'Data Mining', 'https://www.sas.com/en_us/insights/analytics/data-mining/_jcr_content/socialShareImage.img.png', 1, 'http://localhost/CodeRealm/quest/data-mining');
+(2, 2, 'Data Mining', 'Data Mining', 'https://www.sas.com/en_us/insights/analytics/data-mining/_jcr_content/socialShareImage.img.png', 1, 'http://localhost/CodeRealm/quest/data-mining'),
+(3, 1, 'Android', 'Android Development', 'https://cnet4.cbsistatic.com/img/QJcTT2ab-sYWwOGrxJc0MXSt3UI=/2011/10/27/a66dfbb7-fdc7-11e2-8c7c-d4ae52e62bcc/android-wallpaper5_2560x1600_1.jpg', 1, 'http://localhost/CodeRealm/quest/android');
 
 -- --------------------------------------------------------
 
@@ -128,18 +129,20 @@ CREATE TABLE `course_detail` (
   `keterangan` varchar(255) DEFAULT NULL,
   `img` char(255) DEFAULT NULL,
   `point` int(10) NOT NULL DEFAULT '0',
-  `status` int(1) NOT NULL DEFAULT '1'
+  `status` int(1) NOT NULL DEFAULT '1',
+  `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `course_detail`
 --
 
-INSERT INTO `course_detail` (`id`, `id_course`, `nama_detail`, `keterangan`, `img`, `point`, `status`) VALUES
-(1, 1, 'jQuery', 'jQuery', 'https://www.javatpoint.com/jquerypages/images/jquery-tutorial.jpg', 100, 1),
-(2, 1, 'Node JS', 'Node JS', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png', 100, 1),
-(3, 2, 'Text Mining', 'Text Mining', 'https://www.kdnuggets.com/wp-content/uploads/videolectures-most-popular-text-mining-words.jpg', 100, 1),
-(4, 2, 'Image Retrieval', 'Content Based Image Retrieval', 'http://www.ics.uci.edu/~djp3/classes/2009_01_02_INF141/Misc/wordle.jpg', 100, 1);
+INSERT INTO `course_detail` (`id`, `id_course`, `nama_detail`, `keterangan`, `img`, `point`, `status`, `file`) VALUES
+(1, 1, 'jQuery', 'jQuery', 'https://www.javatpoint.com/jquerypages/images/jquery-tutorial.jpg', 100, 1, 'https://www.w3schools.com/jquery/'),
+(2, 1, 'Node JS', 'Node JS', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png', 100, 1, 'https://www.w3schools.com/nodejs/'),
+(3, 2, 'Text Mining', 'Text Mining', 'https://www.kdnuggets.com/wp-content/uploads/videolectures-most-popular-text-mining-words.jpg', 100, 1, 'https://www.tutorialspoint.com/data_mining/dm_mining_text_data.htm'),
+(4, 2, 'Image Retrieval', 'Content Based Image Retrieval', 'http://www.ics.uci.edu/~djp3/classes/2009_01_02_INF141/Misc/wordle.jpg', 100, 1, 'https://www.pyimagesearch.com/2014/12/01/complete-guide-building-image-search-engine-python-opencv/'),
+(5, 3, 'User Interface', 'Android User Interface', 'https://developer.android.com/images/ui/ui_index.png', 100, 1, 'https://www.tutorialspoint.com/android/android_user_interface_layouts.htm');
 
 -- --------------------------------------------------------
 
@@ -151,8 +154,17 @@ CREATE TABLE `enroll_course` (
   `id` int(10) NOT NULL,
   `id_course` int(10) NOT NULL,
   `id_user` int(10) NOT NULL,
+  `enroll_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 = false, 1 = true',
   `total_poin` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `enroll_course`
+--
+
+INSERT INTO `enroll_course` (`id`, `id_course`, `id_user`, `enroll_status`, `total_poin`) VALUES
+(1, 1, 1, 1, 0),
+(2, 2, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -173,6 +185,25 @@ CREATE TABLE `enroll_skills` (
 
 INSERT INTO `enroll_skills` (`id_enroll_skills`, `id_skill`, `id_user`, `enroll_status`) VALUES
 (1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `friend`
+--
+
+CREATE TABLE `friend` (
+  `id` int(11) NOT NULL,
+  `ida` int(11) NOT NULL,
+  `idb` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `friend`
+--
+
+INSERT INTO `friend` (`id`, `ida`, `idb`) VALUES
+(1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -321,6 +352,28 @@ INSERT INTO `skill_path` (`id_skill_path`, `id_skill`, `title_path`, `descriptio
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stats`
+--
+
+CREATE TABLE `stats` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `attack` int(11) NOT NULL,
+  `hp` int(11) NOT NULL,
+  `def` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stats`
+--
+
+INSERT INTO `stats` (`id`, `id_user`, `attack`, `hp`, `def`) VALUES
+(1, 1, 700, 3000, 200),
+(2, 2, 500, 5000, 100);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -332,6 +385,7 @@ CREATE TABLE `user` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `photo_url` varchar(255) DEFAULT NULL,
+  `Avatar` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -339,9 +393,9 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `id_role`, `name`, `email`, `username`, `password`, `photo_url`, `created_at`) VALUES
-(1, 3, 'Rasyadh Abdul Aziz', 'rasyadhabdulaziz@gmail.com', 'rasyadh', 'rasyadh', 'http://localhost/CodeRealm/assets/image/User/rasyadh.jpg', '2017-12-07 04:32:14'),
-(2, 3, 'Muhammad Fatih Abdus Salam', 'mfatihas@gravicodev.com', 'mfatihas', 'mfatihas', 'http://localhost/CodeRealm/assets/image/logo.svg', '2017-12-19 08:31:45');
+INSERT INTO `user` (`id_user`, `id_role`, `name`, `email`, `username`, `password`, `photo_url`, `Avatar`, `created_at`) VALUES
+(1, 3, 'Rasyadh Abdul Aziz', 'rasyadhabdulaziz@gmail.com', 'rasyadh', 'rasyadh', 'http://localhost/CodeRealm/assets/image/User/rasyadh.jpg', 'Yuuki Yuuki-1', '2017-12-28 01:38:40'),
+(2, 3, 'Muhammad Fatih Abdus Salam', 'mfatihas@gravicodev.com', 'mfatihas', 'mfatihas', 'http://localhost/CodeRealm/assets/image/Lecture/2.jpg', 'Avatar Avatar-1', '2017-12-28 01:38:48');
 
 --
 -- Indexes for dumped tables
@@ -401,6 +455,12 @@ ALTER TABLE `enroll_skills`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- Indexes for table `friend`
+--
+ALTER TABLE `friend`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lecture`
 --
 ALTER TABLE `lecture`
@@ -439,6 +499,12 @@ ALTER TABLE `skill_path`
   ADD KEY `id_skill` (`id_skill`);
 
 --
+-- Indexes for table `stats`
+--
+ALTER TABLE `stats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -466,22 +532,27 @@ ALTER TABLE `badgenuser`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `course_detail`
 --
 ALTER TABLE `course_detail`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `enroll_course`
 --
 ALTER TABLE `enroll_course`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `enroll_skills`
 --
 ALTER TABLE `enroll_skills`
   MODIFY `id_enroll_skills` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `friend`
+--
+ALTER TABLE `friend`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `lecture`
 --
@@ -507,6 +578,11 @@ ALTER TABLE `skill_course`
 --
 ALTER TABLE `skill_path`
   MODIFY `id_skill_path` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `stats`
+--
+ALTER TABLE `stats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user`
 --
