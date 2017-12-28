@@ -27,40 +27,51 @@
                     </div>
                 </div>
                 <div class="ui column">
-                    <div class="ui center aligned grid">
-                        <div class="One column row">                            
-                            <div class="column">
-                                <p>Base Attack</p>
+                    <div class="ui padded segment">
+                        <div class="ui center aligned grid">
+                            <div class="three column row">
+                                <div class="column">
+                                    <a class="ui red big circular label"><?= $statgw->attack ?></a>
+                                </div>
+                                <div class="column">
+                                    <div class="ui big label">
+                                        Base Attack
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <a class="ui blue big circular label"><?= $statmusuh->attack ?></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="Two column row">                            
-                            <div class="eight wide column">
-                                <p><?= $statgw->attack ?></p>
+                            <div class="three column row">
+                                <div class="column">
+                                    <a class="ui red big circular label"><?= $statgw->def ?></a>
+                                </div>
+                                <div class="column">
+                                    <div class="ui big label">
+                                        Base Defend
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <a class="ui blue big circular label"><?= $statmusuh->def ?></a>
+                                </div>
                             </div>
-                            <div class="eight wide column">
-                                <p><?= $statmusuh->attack ?></p>
+                            <div class="one row row">
+                                <div class="column">
+                                    <div class="ui center aligned container">
+                                        <h1>VS</h1>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="One column row">                            
-                            <p>Base Defend</p>
-                        </div>
-                        <div class="Two column row">                            
-                            <div class="eight wide column">
-                                <p><?= $statgw->def ?></p>
+                            <div class="One column row">
+                                <div class="ui big label" id="turntext"></div>
                             </div>
-                            <div class="eight wide column">
-                                <p><?= $statmusuh->def ?></p>
+                            <div class="One column row">
+                                <div class="ui label" id="attackturn">
+                                    Attack <span id="attackval"></span>
+                                </div>
                             </div>
+                            <br/>
                         </div>
-                        <br/>
-                        <div class="One column row">                            
-                            <p><span id="turntext"></span></p>
-                        </div>
-
-                        <div class="One column row">                            
-                            <p>Attack <span id="attackval"></span></p>
-                        </div>
-                        <br/>
                     </div>
                 </div>
                 <div class="ui column">
@@ -128,6 +139,8 @@
                 if(hp < 0)hp = 0;
 
                 $('#modaltitle').html('You Win');
+                $('#attackturn').removeClass("red");
+                $('#attackturn').addClass("blue");
                 $('#attackval').html(currhpb - hp);
                 changeHpMusuh(hp);
             }else{
@@ -136,6 +149,8 @@
                 if(hp < 0)hp = 0;
 
                 $('#modaltitle').html('You Lose');
+                $('#attackturn').removeClass("blue");
+                $('#attackturn').addClass("red");
                 $('#attackval').html(currhpa - hp);
                 changeHpGw(hp);
             }
@@ -152,8 +167,12 @@
 
         function attackText(turn){
             if(turn == 0){
+                $('#turntext').removeClass("blue");
+                $('#turntext').addClass("red");
                 $('#turntext').html("Your Turn");
-            }else{
+            }else{  
+                $('#turntext').removeClass("red");
+                $('#turntext').addClass("blue");
                 $('#turntext').html("Enemy Turn");
             }
         }
